@@ -12,6 +12,7 @@ export_paths:
   - public
   - package.json
   - README.md
+  - tailwind.config.js
   - tailwind.config.stataroid.js
   - vite.config.js
 dependencies:
