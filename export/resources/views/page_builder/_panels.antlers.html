@@ -1,0 +1,68 @@
+{{ partial:page_builder/block }}
+    <section id="{{ block:slug }}" class="
+        {{ switch(
+            (panels_bg_gradient == true) => 'bg-gradient-to-r from-[{{ panels_bg_colour }}]/{{ panels_bg_opacity }} to-[{{ panels_bg_secondary_colour }}]/{{ panels_bg_opacity }} ',
+            (panels_bg_gradient == false) => 'bg-[{{ panels_bg_colour }}] bg-opacity-{{ panels_bg_opacity }}'
+            ) }}
+    ">
+        <div class="content-area">
+            <div class="inner-padding">
+                <div class="mb-10 text-center md:text-start">
+                    {{ panels_title }}
+                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                            {{ title }}
+                        </{{ heading }}>
+                    {{ /panels_title }}
+                </div>
+                {{ panels }}
+                    <div id="{{ title }}">
+                        <div class="md:block hidden">
+                            {{ if index % 2 }}
+                                <div class="panel-block-desktop">
+                                    <div class="content">
+                                        {{ panel_item_title }}
+                                            <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                                                {{ title }}
+                                            </{{ heading }}>
+                                        {{ /panel_item_title }}
+                                        <div class="prose text-[{{ panel_item_text_colour }}]">
+                                            {{ panel_item_content | markdown }}
+                                        </div>
+                                    </div>
+                                    <img class="{{ img_class }} md:w-1/2" src="{{ image }}" alt="{{ company:name }}">
+                                </div>
+                            {{ else }}
+                                <div class="panel-block-desktop">
+                                    <img class="{{ img_class }} md:w-1/2" src="{{ image }}" alt="{{ company:name }}">
+                                    <div class="content">
+                                        {{ panel_item_title }}
+                                            <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                                                {{ title }}
+                                            </{{ heading }}>
+                                        {{ /panel_item_title }}
+                                        <div class="prose text-[{{ panel_item_text_colour }}]">
+                                            {{ panel_item_content | markdown }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {{ /if }}
+                        </div>
+
+                        <div class="panel-block-mobile">
+                            <div class="content">
+                                {{ panel_item_title }}
+                                    <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                                        {{ title }}
+                                    </{{ heading }}>
+                                {{ /panel_item_title }}
+                                <div class="prose text-[{{ panel_item_text_colour }}]">
+                                    {{ panel_item_content | markdown }}
+                                </div>
+                            </div>
+                            <img src="{{ image }}" alt="{{ company:name }}">
+                        </div>
+                    </div>
+                {{ /panels }}
+            </div>
+    </section>
+{{ /partial:page_builder/block }}

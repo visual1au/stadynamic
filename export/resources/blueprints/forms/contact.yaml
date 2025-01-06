@@ -1,0 +1,38 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: first_name
+            field:
+              type: text
+              display: 'First Name'
+              validate:
+                - required
+              width: 50
+          -
+            handle: last_name
+            field:
+              type: text
+              display: 'Last Name'
+              validate:
+                - required
+              width: 50
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: Email
+              validate:
+                - required
+          -
+            handle: message
+            field:
+              placeholder: 'Write something...'
+              type: textarea
+              display: Message
+              if:
+                first_name: 'contains Alex'

@@ -1,0 +1,54 @@
+title: Form
+fields:
+  -
+    import: colour_picker
+    prefix: form_bg_
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+      instructions: 'The slug is required for anchored links.'
+  -
+    handle: layout
+    field:
+      options:
+        -
+          key: row
+          value: Row
+        -
+          key: col
+          value: Column
+      inline: true
+      default: row
+      type: radio
+      display: Layout
+      width: 50
+  -
+    handle: width
+    field:
+      default: '50'
+      type: width
+      display: Width
+      width: 50
+  -
+    import: header
+    prefix: form_
+  -
+    import: markdown_content
+    prefix: form_
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+  -
+    handle: form
+    field:
+      max_items: 1
+      type: form
+      display: Form
+      validate:
+        - required

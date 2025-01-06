@@ -1,0 +1,23 @@
+title: Gallery
+fields:
+  -
+    import: colour_picker
+    prefix: gallery_bg_
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+  -
+    import: header
+    prefix: gallery_
+  -
+    import: grid_cols
+    prefix: gallery_
+  -
+    handle: images
+    field:
+      container: assets
+      restrict: true
+      type: assets
+      display: Images

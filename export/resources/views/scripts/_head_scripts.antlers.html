@@ -1,0 +1,9 @@
+{{ scripts }}
+    {{ if enable_all }}
+        {{ head_scripts }}
+            {{ if enable_script }}
+                {{ script }}
+            {{ /if }}
+        {{ /head_scripts }}
+    {{ /if }}
+{{ /scripts }}

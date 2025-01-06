@@ -1,0 +1,38 @@
+title: Carousel
+fields:
+  -
+    import: colour_picker
+    prefix: carousel_bg_
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+      instructions: 'The slug is required for anchored links.'
+  -
+    import: header
+    prefix: carousel_
+  -
+    import: grid_cols
+    prefix: carousel_
+  -
+    handle: carousel
+    field:
+      type: replicator
+      display: Carousel
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            carousel_item:
+              display: 'Carousel Item'
+              fields:
+                -
+                  import: colour_picker
+                  prefix: carousel_item_bg_
+                -
+                  import: header
+                  prefix: carousel_item_
+                -
+                  import: markdown_content
+                  prefix: carousel_item_

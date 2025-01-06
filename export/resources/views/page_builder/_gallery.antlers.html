@@ -1,0 +1,49 @@
+{{# TODO:: Apply the gradient switch to all other backgrounds #}}
+{{ partial:page_builder/block }}
+    <section id="{{ block:slug }}" class="
+        {{ switch(
+    (gallery_bg_gradient == true) => 'bg-gradient-to-r from-[{{ gallery_bg_colour }}]/{{ gallery_bg_opacity }} to-[{{ gallery_bg_secondary_colour }}]/{{ gallery_bg_opacity }} ',
+    (gallery_bg_gradient == false) => 'bg-[{{ gallery_bg_colour }}] bg-opacity-{{ gallery_bg_opacity }}'
+    ) }}
+     ">
+        <div class="content-area">
+            <div class="inner-padding">
+                <div class="mb-10 text-center md:text-start">
+                    {{ gallery_title }}
+                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                            {{ title }}
+                        </{{ heading }}>
+                    {{ /gallery_title }}
+                </div>
+                <div class="grid grid-cols-1 gap-4
+                    {{ switch(
+    (gallery_cols_sm == '1') => 'sm:grid-cols-1',
+    (gallery_cols_sm == '2') => 'sm:grid-cols-2',
+    (gallery_cols_sm == '3') => 'sm:grid-cols-3',
+    (gallery_cols_sm == '4') => 'sm:grid-cols-4',
+    (gallery_cols_sm == '5') => 'sm:grid-cols-5',
+    (gallery_cols_sm == '6') => 'sm:grid-cols-6') }}
+                    {{ switch(
+    (gallery_cols_md == '1') => 'md:grid-cols-1',
+    (gallery_cols_md == '2') => 'md:grid-cols-2',
+    (gallery_cols_md == '3') => 'md:grid-cols-3',
+    (gallery_cols_md == '4') => 'md:grid-cols-4',
+    (gallery_cols_md == '5') => 'md:grid-cols-5',
+    (gallery_cols_md == '6') => 'md:grid-cols-6') }}
+                    {{ switch(
+    (gallery_cols_lg == '1') => 'lg:grid-cols-1',
+    (gallery_cols_lg == '2') => 'lg:grid-cols-2',
+    (gallery_cols_lg == '3') => 'lg:grid-cols-3',
+    (gallery_cols_lg == '4') => 'lg:grid-cols-4',
+    (gallery_cols_lg == '5') => 'lg:grid-cols-5',
+    (gallery_cols_lg == '6') => 'lg:grid-cols-6') }}">
+                    {{ images }}
+                        <div>
+                            <img class="w-full h-48 rounded-lg object-cover" src="{{ url }}" alt="">
+                        </div>
+                    {{ /images }}
+                </div>
+            </div>
+        </div>
+    </section>
+{{ /partial:page_builder/block }}

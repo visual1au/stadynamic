@@ -1,0 +1,68 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: enable_all
+            field:
+              type: toggle
+              display: 'Enable/diable ALL scripts'
+              default: true
+          -
+            handle: head_scripts
+            field:
+              type: replicator
+              display: 'Head Scripts'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    head_script:
+                      display: 'Head Script'
+                      fields:
+                        -
+                          handle: enable_script
+                          field:
+                            type: toggle
+                            display: 'Enable/disable the script'
+                            default: true
+                        -
+                          handle: name
+                          field:
+                            type: text
+                            display: Name
+                        -
+                          handle: script
+                          field:
+                            type: code
+                            display: Script
+          -
+            handle: body_scripts
+            field:
+              type: replicator
+              display: 'Body Scripts'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    body_script:
+                      display: 'Body Script'
+                      fields:
+                        -
+                          handle: enable_script
+                          field:
+                            type: toggle
+                            display: 'Enable/disable the script'
+                            default: true
+                        -
+                          handle: name
+                          field:
+                            type: text
+                            display: Name
+                        -
+                          handle: script
+                          field:
+                            type: code
+                            display: Script

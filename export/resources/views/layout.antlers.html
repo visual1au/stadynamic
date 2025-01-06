@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{ company:name }} - {{ title ?? site:name }}</title>
+        <link rel="icon" href="{{ company:icon }}" type="image/x-icon" />
+        <script src="https://kit.fontawesome.com/c910993a50.js" crossorigin="anonymous"></script>
+        {{ partial:scripts/head_scripts }}
+        {{ vite src="resources/js/site.js|resources/css/site.scss" }}
+    </head>
+    <body class="min-h-screen flex flex-col flex-grow">
+        {{ partial:navigation/nav }}
+        {{ template_content }}
+        {{ partial:navigation/footer }}
+        {{ partial:scripts/body_scripts }}
+    </body>
+</html>

@@ -1,0 +1,23 @@
+body {
+    @apply min-h-screen;
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text;
+    }
+
+    .bg-gradient {
+        @apply bg-gradient-to-r from-primary/5 via-white to-secondary/5 z-10;
+    }
+
+    section {
+        @apply scroll-my-20;
+
+        .content-area {
+            @apply max-w-7xl mx-auto;
+
+            .inner-padding {
+                @apply md:px-12 px-6 py-12 lg:py-20;
+            }
+        }
+    }
+}

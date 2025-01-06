@@ -1,0 +1,57 @@
+.carousel {
+    &.swiper {
+        @apply max-w-screen-xl mx-auto overflow-visible;
+
+        --swiper-navigation-size: 0; /* Sets the size of the navigation buttons */
+        --swiper-navigation-top-offset: 50%; /* Centers the buttons vertically */
+        --swiper-navigation-sides-offset: 10px; /* Moves the buttons outside the container by 10px */
+        --swiper-navigation-color: var(
+            --your-color
+        ); /* Replace with your desired color, e.g., `#000` or `--primary-color` */
+    }
+
+    &.swiper-wrapper {
+        @apply grid grid-cols-1;
+    }
+
+    .swiper-slide {
+        @apply w-full sm:w-auto rounded-xl border p-10 mb-10;
+        @apply h-auto !important;
+    }
+
+    /* Remove the default icons */
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    /* Center align and style the Font Awesome icons */
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: auto; /* Let the button size adjust to the icon */
+        height: auto;
+        background: none; /* Remove background if any */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Customize the icon size and color */
+    .swiper-button-prev i,
+    .swiper-button-next i {
+        font-size: 1.5rem; /* Adjust the size as needed */
+        color: #333; /* Customize color */
+    }
+
+    /* Hover effect */
+    .swiper-button-prev:hover i,
+    .swiper-button-next:hover i {
+        color: #666; /* Optional: change color on hover */
+    }
+
+    .swiper-pagination {
+        .swiper-pagination-bullet-active {
+            @apply bg-primary;
+        }
+    }
+}

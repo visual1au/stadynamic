@@ -1,0 +1,23 @@
+.panel-block-desktop {
+    @apply flex flex-col md:items-start items-center md:flex-row w-full relative space-x-16 mb-20;
+
+    .content {
+        @apply flex flex-col justify-between p-4 leading-normal md:w-1/2 text-center md:text-start;
+    }
+
+    img {
+        @apply md:w-1/2;
+    }
+}
+
+.panel-block-mobile {
+    @apply md:hidden flex flex-col md:items-start items-center md:flex-row w-full relative mb-20;
+
+    .content {
+        @apply flex flex-col justify-between leading-normal md:w-1/2 mb-10 text-center md:text-start;
+    }
+
+    img {
+        @apply object-cover md:w-1/2 h-96 md:h-auto;
+    }
+}

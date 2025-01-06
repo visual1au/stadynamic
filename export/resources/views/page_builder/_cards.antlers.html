@@ -1,0 +1,100 @@
+{{ partial:page_builder/block }}
+    <section id="{{ block:slug }}" class="
+        {{ switch(
+            (cards_bg_gradient == true) => 'bg-gradient-to-r from-[{{ cards_bg_colour }}]/{{ cards_bg_opacity }} to-[{{ cards_bg_secondary_colour }}]/{{ cards_bg_opacity }} ',
+            (cards_bg_gradient == false) => 'bg-[{{ cards_bg_colour }}] bg-opacity-{{ cards_bg_opacity }}'
+            ) }}
+    ">
+        <div class="content-area">
+            <div class="inner-padding">
+                <div class="mb-10 text-center md:text-start">
+                    {{ cards_title }}
+                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                            {{ title }}
+                        </{{ heading }}>
+                    {{ /cards_title }}
+                </div>
+                <div class="grid grid-cols-1 gap-4
+                {{ switch(
+                    (cards_cols_sm == '1') => 'sm:grid-cols-1',
+                    (cards_cols_sm == '2') => 'sm:grid-cols-2',
+                    (cards_cols_sm == '3') => 'sm:grid-cols-3',
+                    (cards_cols_sm == '4') => 'sm:grid-cols-4',
+                    (cards_cols_sm == '5') => 'sm:grid-cols-5',
+                    (cards_cols_sm == '6') => 'sm:grid-cols-6') }}
+                {{ switch(
+                    (cards_cols_md == '1') => 'md:grid-cols-1',
+                    (cards_cols_md == '2') => 'md:grid-cols-2',
+                    (cards_cols_md == '3') => 'md:grid-cols-3',
+                    (cards_cols_md == '4') => 'md:grid-cols-4',
+                    (cards_cols_md == '5') => 'md:grid-cols-5',
+                    (cards_cols_md == '6') => 'md:grid-cols-6') }}
+                {{ switch(
+                    (cards_cols_lg == '1') => 'lg:grid-cols-1',
+                    (cards_cols_lg == '2') => 'lg:grid-cols-2',
+                    (cards_cols_lg == '3') => 'lg:grid-cols-3',
+                    (cards_cols_lg == '4') => 'lg:grid-cols-4',
+                    (cards_cols_lg == '5') => 'lg:grid-cols-5',
+                    (cards_cols_lg == '6') => 'lg:grid-cols-6') }}
+                ">
+                    {{ cards }}
+                        {{ if flip }}
+                            <div class="group min-h-[300px] h-full text-center [perspective:1000px]">
+                                <div class="relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                                    <!-- Front Side -->
+                                    <div class="absolute w-full h-full rounded-2xl p-4 flex flex-col items-center justify-center [backface-visibility:hidden]
+                                    {{ switch(
+                                        (front_card_gradient == true) => 'bg-gradient-to-r from-[{{ front_card_colour }}]/{{ front_card_opacity }} to-[{{ front_card_secondary_colour }}]/{{ front_card_opacity }} ',
+                                        (front_card_gradient == false) => 'bg-[{{ front_card_colour }}] bg-opacity-{{ front_card_opacity }}'
+                                        ) }}
+                                    ">
+                                        <img src="{{ icon }}" alt="icon" class="size-20 mb-4">
+                                        {{ card_title }}
+                                            <{{ heading }} class="mb-4 text-[{{ text_colour }}]">
+                                                {{ title }}
+                                            </{{ heading }}>
+                                        {{ /card_title }}
+                                    </div>
+
+                                    <!-- Back Side -->
+                                    <div class="absolute inset-0 rounded-2xl p-4 flex flex-col items-center  justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]
+                                    {{ switch(
+                                        (back_card_gradient == true) => 'bg-gradient-to-r from-[{{ back_card_colour }}]/{{ back_card_opacity }} to-[{{ back_card_secondary_colour }}]/{{ back_card_opacity }} ',
+                                        (back_card_gradient == false) => 'bg-[{{ back_card_colour }}] bg-opacity-{{ back_card_opacity }}'
+                                        ) }}
+                                    ">
+                                        <div class="line-clamp-6">
+                                            {{ content }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{ else }}
+                            <div class="min-h-[300px] h-full text-center">
+                                <div class="w-full h-full ">
+                                    <!-- Front Side -->
+                                    <div class="w-full h-full border rounded-2xl p-4 flex flex-col items-center justify-center
+                                    {{ switch(
+                                        (front_card_gradient == true) => 'bg-gradient-to-r from-[{{ front_card_colour }}]/{{ front_card_opacity }} to-[{{ front_card_secondary_colour }}]/{{ front_card_opacity }} ',
+                                        (front_card_gradient == false) => 'bg-[{{ front_card_colour }}] bg-opacity-{{ front_card_opacity }}'
+                                        ) }}"
+                                    >
+                                        <img src="{{ icon }}" alt="icon" class="size-20 mb-4">
+                                        {{ card_title }}
+                                            <{{ heading }} class="mb-4 text-[{{ text_colour }}]">
+                                                {{ title }}
+                                            </{{ heading }}>
+                                        {{ /card_title }}
+                                        <div class="line-clamp-6">
+                                            {{ content }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{ /if }}
+                    {{ /cards }}
+                </div>
+            </div>
+        </div>
+    </section>
+{{ /partial:page_builder/block }}

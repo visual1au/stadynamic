@@ -1,0 +1,92 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: logo
+            field:
+              container: assets
+              type: assets
+              display: Logo
+              max_files: 1
+          -
+            handle: icon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Icon
+          -
+            handle: phone
+            field:
+              input_type: tel
+              type: text
+              display: Phone
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: Email
+      -
+        display: Socials
+        fields:
+          -
+            handle: social_links
+            field:
+              type: replicator
+              display: 'Social Links'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    social:
+                      display: Social
+                      fields:
+                        -
+                          handle: label
+                          field:
+                            type: text
+                            display: Label
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+                        -
+                          handle: fontawesome_icon
+                          field:
+                            type: code
+                            display: 'Fontawesome Icon'
+      -
+        display: Legal
+        fields:
+          -
+            handle: legal_links
+            field:
+              type: replicator
+              display: 'Legal Links'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    legal:
+                      display: Legal
+                      fields:
+                        -
+                          handle: label
+                          field:
+                            type: text
+                            display: Label
+                        -
+                          handle: entry
+                          field:
+                            type: entries
+                            display: Entry

@@ -1,0 +1,19 @@
+h1 {
+    @apply lg:text-7xl md:text-6xl text-5xl font-semibold lg:leading-[77px]; // 72px
+}
+
+h2 {
+    @apply lg:text-5xl md:text-4xl text-3xl lg:leading-tight; // 48px
+}
+
+h3 {
+    @apply lg:text-2xl md:text-xl text-lg lg:leading-tight; // 24px
+}
+
+h4 {
+    @apply lg:text-xl md:text-lg text-base lg:leading-tight; // 20px
+}
+
+p {
+    @apply lg:text-lg md:text-base text-sm lg:leading-relaxed; // 18px
+}

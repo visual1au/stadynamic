@@ -1,0 +1,71 @@
+title: FAQ
+fields:
+  -
+    import: colour_picker
+    prefix: faq_bg_
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+      instructions: 'The slug is required for anchored links.'
+  -
+    handle: layout
+    field:
+      options:
+        -
+          key: row
+          value: Row
+        -
+          key: col
+          value: Column
+      inline: true
+      default: row
+      type: radio
+      display: Layout
+      width: 50
+  -
+    handle: width
+    field:
+      type: width
+      display: Width
+      width: 50
+  -
+    import: header
+    prefix: faq_
+  -
+    import: markdown_content
+    prefix: faq_
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+  -
+    import: buttons
+    prefix: faq_
+  -
+    handle: faq_items
+    field:
+      type: replicator
+      display: 'FAQ Items'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            questions_answers:
+              display: 'Questions & Answers'
+              icon: alert-help-question
+              fields:
+                -
+                  handle: question
+                  field:
+                    type: text
+                    display: Question
+                -
+                  handle: answer
+                  field:
+                    type: markdown
+                    display: Answer

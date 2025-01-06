@@ -1,0 +1,21 @@
+<section id="success" class="flex-grow mb-20">
+    <div class="content-area">
+        <div class="inner-padding">
+            <div class="text-center">
+                <h3 class="text-gradient font-bold max-w-sm mx-auto">
+                    {{ title | upper }}
+                </h3>
+                <i
+                    class="fa-regular fa-circle-check fa-5x text-primary my-6 text-gradient"
+                ></i>
+                <div class="mb-4 text-xl text-dark text-center">
+                    {{ content }}
+                </div>
+                <div class="mt-20">
+                    {{ partial:button text="Back to Homepage" class="btn
+                    btn-primary" type="link" url="/" }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

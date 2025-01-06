@@ -1,0 +1,65 @@
+title: Cards
+fields:
+  -
+    import: colour_picker
+    prefix: cards_bg_
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+      instructions: 'The slug is required for anchored links.'
+  -
+    import: header
+    prefix: cards_
+  -
+    handle: flip
+    field:
+      type: toggle
+      display: Flip
+  -
+    import: grid_cols
+    prefix: cards_
+  -
+    handle: cards
+    field:
+      type: replicator
+      display: Cards
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            card:
+              display: Card
+              fields:
+                -
+                  handle: icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Icon
+                -
+                  import: header
+                  prefix: card_
+                -
+                  handle: content
+                  field:
+                    type: textarea
+                    display: Content
+                -
+                  handle: front
+                  field:
+                    type: section
+                    display: Front
+                -
+                  import: colour_picker
+                  prefix: front_card_
+                -
+                  handle: back
+                  field:
+                    type: section
+                    display: Back
+                -
+                  import: colour_picker
+                  prefix: back_card_

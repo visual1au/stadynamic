@@ -1,0 +1,15 @@
+title: Hero
+fields:
+  -
+    handle: background_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Background
+  -
+    import: header
+    prefix: hero_
+  -
+    import: buttons
+    prefix: hero_

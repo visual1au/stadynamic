@@ -1,0 +1,39 @@
+title: 'Alternating Panels'
+fields:
+  -
+    import: colour_picker
+    prefix: panels_bg_
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+      instructions: 'The slug is required for anchored links.'
+  -
+    import: header
+    prefix: panels_
+  -
+    handle: panels
+    field:
+      type: replicator
+      display: Panels
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            panel:
+              display: Panel
+              fields:
+                -
+                  import: header
+                  prefix: panel_item_
+                -
+                  import: markdown_content
+                  prefix: panel_item_
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image

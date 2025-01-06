@@ -1,0 +1,9 @@
+title: Contact
+honeypot: form_username
+email:
+  -
+    id: m4ur3b5n
+    to: support@visual1.com.au
+    markdown: true
+    mailer: smtp
+    html: emails/form-submission

@@ -1,0 +1,7 @@
+.btn {
+    @apply text-white px-5 py-2.5 h-12 rounded-xl hover:bg-opacity-55;
+}
+
+.inline {
+    @apply px-5 py-2.5 h-12 rounded-xl hover:underline;
+}

@@ -1,0 +1,29 @@
+.faq-section {
+    @apply mx-auto flex gap-16;
+
+    header {
+        img {
+            @apply h-72 w-auto my-8;
+        }
+
+        .buttons {
+            @apply mt-8;
+        }
+    }
+
+    .faq-container {
+        @apply divide-y divide-neutral-300 overflow-hidden rounded-md border-none bg-transparent text-start;
+
+        .faq-item {
+            @apply divide-y divide-neutral-300;
+
+            button.question {
+                @apply flex w-full items-center justify-between gap-4 p-4 text-left underline-offset-2 hover:underline focus-visible:underline focus-visible:outline-none;
+            }
+
+            div.answer {
+                @apply p-4 text-sm sm:text-base text-pretty;
+            }
+        }
+    }
+}

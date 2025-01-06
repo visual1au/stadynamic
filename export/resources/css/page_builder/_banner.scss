@@ -1,0 +1,23 @@
+.banner-container {
+    @apply p-6 sm:p-12 rounded-2xl;
+
+    .content-area {
+        @apply flex flex-col-reverse md:flex-row gap-8;
+
+        .content {
+            @apply flex-1 text-center md:text-left;
+        }
+
+        .image-container {
+            @apply flex-1 flex justify-center md:justify-end;
+
+            img {
+                @apply object-contain size-72;
+            }
+        }
+    }
+
+    .buttons {
+        @apply flex flex-col-reverse sm:flex-row justify-center md:justify-end items-center gap-2 mt-8;
+    }
+}

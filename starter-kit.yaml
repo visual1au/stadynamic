@@ -1,0 +1,18 @@
+updatable: true
+export_paths:
+  - app/Providers/AppServiceProvider.php
+  - content
+  - config/filesystems.php
+  - config/statamic/assets.php
+  - resources
+  - .env.example
+  - bitbucket-pipelines.yml
+  - production.Dockerfile
+  - vapor.yml
+  - public
+  - package.json
+  - README.md
+  - tailwind.config.stataroid.js
+  - vite.config.js
+dependencies:
+  gerttimmerman/statamic-zapier: ^1.6

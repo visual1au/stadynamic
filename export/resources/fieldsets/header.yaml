@@ -1,0 +1,42 @@
+title: Header
+fields:
+  - handle: title
+    field:
+      type: replicator
+      display: Header
+      sets:
+        new_set_group:
+          display: "New Set Group"
+          sets:
+            title:
+              display: Title
+              hide: true
+              fields:
+                - handle: title
+                  field:
+                    type: text
+                    display: Text
+                - handle: heading
+                  field:
+                    options:
+                      - key: h1
+                        value: H1
+                      - key: h2
+                        value: H2
+                      - key: h3
+                        value: H3
+                      - key: h4
+                        value: H4
+                      - key: h5
+                        value: H5
+                      - key: h6
+                        value: H6
+                    default: h2
+                    type: select
+                    display: Heading
+                    width: 50
+                - handle: text_colour
+                  field: colour_picker.colour
+                  config:
+                    display: "Text Colour"
+                    default: "#000000"

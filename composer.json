@@ -1,0 +1,24 @@
+{
+    "name": "visual1au/stadynamic",
+    "extra": {
+        "statamic": {
+            "name": "Stadynamic",
+            "description": "Page builder"
+        },
+        "laravel": {
+            "providers": [
+                "Visual1Au\\Stadynamic\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Visual1Au\\Stadynamic\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    }
+}

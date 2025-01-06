@@ -1,0 +1,110 @@
+{{# @name Form @desc The form page builder block. @set page.page_builder.form #}}
+<!-- /page_builder/_form.antlers.html -->
+{{ partial:page_builder/block }}
+    <section id="{{ block:slug }}" class="
+        {{ switch(
+    (form_bg_gradient == true) => 'bg-gradient-to-r from-[{{ form_bg_colour }}]/{{ form_bg_opacity }} to-[{{ form_bg_secondary_colour }}]/{{ form_bg_opacity }} ',
+    (form_bg_gradient == false) => 'bg-[{{ form_bg_colour }}] bg-opacity-{{ form_bg_opacity }}'
+    ) }}
+    ">
+        <div class="content-area">
+            <div class="inner-padding form-section
+                {{ switch(
+    (layout == 'row') => 'flex-col text-center md:text-start md:flex-row',
+    (layout == 'col') => 'flex-col text-center') }}
+                {{ switch(
+    (layout == 'col' && width == 25) => 'w-[25%]',
+    (layout == 'col' && width == 33) => 'w-[33%]',
+    (layout == 'col' && width == 50) => 'w-[50%]',
+    (layout == 'col' && width == 66) => 'w-[66%]',
+    (layout == 'col' && width == 75) => 'w-[75%]',
+    (layout == 'col' && width == 100) => 'w-[100%]',
+    ) }}">
+                <header class="
+                    {{ switch(
+    (layout == 'row' && width == 25) => 'md:w-[25%]',
+    (layout == 'row' && width == 33) => 'md:w-[33%]',
+    (layout == 'row' && width == 50) => 'md:w-[50%]',
+    (layout == 'row' && width == 66) => 'md:w-[66%]',
+    (layout == 'row' && width == 75) => 'md:w-[75%]',
+    (layout == 'row' && width == 100) => 'md:w-[100%]',
+    ) }}">
+                    {{ form_title }}
+                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                            {{ title }}
+                        </{{ heading }}>
+                    {{ /form_title }}
+
+                    <div class="text-[{{ form_text_colour }}]">
+                        {{ form_content | markdown }}
+                    </div>
+                    {{ if image }}
+                        <img src="{{ image }}" alt="form-image">
+                    {{ /if }}
+                </header>
+                <div class="{{ switch(
+    (layout == 'row' && width == 25) => 'md:w-[75%]',
+    (layout == 'row' && width == 33) => 'md:w-[66%]',
+    (layout == 'row' && width == 50) => 'md:w-[50%]',
+    (layout == 'row' && width == 66) => 'md:w-[33%]',
+    (layout == 'row' && width == 75) => 'md:w-[25%]',
+    (layout == 'row' && width == 100) => 'md:w-[0%]',
+    ) }}">
+                    {{ if form:handle }}
+                        {{ form:create :in="form:handle" js="alpine:form" attr:x-ref="form" }}
+                            {{ if errors }}
+                                <div id="form-errors" class="p-4 mb-4 text-sm text-white rounded-lg bg-secondary" role="alert">
+                                    <span class="font-bold">Something doesn't look right.</span> Please
+                                    check the following required fields:
+                                    <ul class="max-w-md space-y-1 list-disc list-inside mt-2">
+                                        {{ errors }}
+                                            <li>{{ value }}</li>
+                                        {{ /errors }}
+                                    </ul>
+                                </div>
+                            {{ /if }}
+                            <div class="flex flex-wrap -mx-2 text-start">
+                                {{ fields }}
+                                    <template x-if="{{ show_field }}">
+                                        <div class="mb-4 px-2 {{ if width == '50' }}md:w-1/2 w-full{{ else }}w-full{{ /if }}">
+                                            <label class="text-dark">
+                                                {{ display }}
+                                                {{ if validate | contains:required }}
+                                                    <sup class="error">*</sup>
+                                                {{ /if }}
+                                            </label>
+                                            <div>
+                                                {{ if handle == 'submission_date' }}
+                                                    <input type="hidden" name="submission_date" value="{{ now }}" />
+                                                {{ else }}
+                                                    {{ field }}
+                                                {{ /if }}
+                                            </div>
+                                            {{ if error }}
+                                                <p class="error text-xs mt-1">{{ error }}</p>
+                                            {{ /if }}
+                                        </div>
+                                    </template>
+                                {{ /fields }}
+
+                                <!-- Honeypot - must match honeypot field name in CP Form config -->
+                                <div class="mb-4 px-2 w-full poohbear">
+                                    <label class="text-secondary">Form Username<sup class="error">*</sup></label>
+                                    <div><input type="text" name="form_username" /></div>
+                                </div>
+
+                                <!-- Hidden field with submission date -->
+                                <input type="hidden" name="submission_date" value="{{ now format="Y-m-d
+        H:i:s" }}">
+                            </div>
+                            <div class="mt-6 text-right">
+                                <button class="btn bg-primary text-right" type="submit">Submit</button>
+                            </div>
+                        {{ /form:create }}
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+    </section>
+{{ /partial:page_builder/block }}
+<!-- End: /page_builder/_form.antlers.html -->

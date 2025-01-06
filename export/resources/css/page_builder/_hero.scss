@@ -1,0 +1,11 @@
+.hero {
+    @apply bg-cover bg-center bg-no-repeat;
+
+    header {
+        @apply py-20 text-center;
+    }
+
+    .buttons {
+        @apply flex flex-col-reverse sm:flex-row justify-center items-center gap-2 mt-8;
+    }
+}

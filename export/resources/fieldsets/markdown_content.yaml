@@ -1,0 +1,22 @@
+title: 'Markdown Content'
+fields:
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Content
+      width: 75
+  -
+    handle: text_colour
+    field:
+      swatches:
+        - '#00e6f5'
+        - '#f700f4'
+        - '#808080'
+        - '#000'
+        - '#ffffff'
+      allow_any: false
+      default: '#000000'
+      type: color
+      display: 'Text Colour'
+      width: 25
