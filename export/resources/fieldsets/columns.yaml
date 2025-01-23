@@ -1,0 +1,71 @@
+title: Columns
+fields:
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+  -
+    import: colour_picker
+    prefix: columns_bg_
+  -
+    import: header
+    prefix: columns_
+  -
+    import: markdown_content
+    prefix: columns_
+  -
+    handle: columns
+    field:
+      type: replicator
+      display: Columns
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            column:
+              display: Column
+              fields:
+                -
+                  import: colour_picker
+                  prefix: column_
+                -
+                  import: widths
+                  prefix: column_
+                -
+                  import: header
+                  prefix: column_
+                -
+                  import: markdown_content
+                  prefix: column_
+                -
+                  handle: select_content_type
+                  field:
+                    options:
+                      -
+                        key: image_video
+                        value: 'Image or Video'
+                      -
+                        key: embedded_code
+                        value: 'Embedded Code'
+                    type: select
+                    display: 'Select Content Type'
+                -
+                  handle: embedded_code
+                  field:
+                    type: code
+                    display: 'Embedded Code'
+                    if:
+                      select_content_type: 'equals embedded_code'
+                -
+                  handle: file
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Image / Video'
+                    if:
+                      select_content_type: 'equals image_video'
+                -
+                  import: buttons
+                  prefix: column_

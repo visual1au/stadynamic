@@ -65,6 +65,12 @@ fields:
               fields:
                 -
                   import: cards
+            columns:
+              display: Columns
+              icon: layout-three-columns
+              fields:
+                -
+                  import: columns
         text:
           display: Text
           instructions: 'Text based blocks.'

@@ -1,0 +1,161 @@
+{{ partial:page_builder/block }}
+    <section id="{{ block:slug }}" class="
+        {{ switch(
+            (columns_bg_gradient == true) => 'bg-gradient-to-r from-[{{ columns_bg_colour }}]/{{ columns_bg_opacity }} to-[{{ columns_bg_secondary_colour }}]/{{ columns_bg_opacity }} ',
+            (columns_bg_gradient == false) => 'bg-[{{ columns_bg_colour }}] bg-opacity-{{ columns_bg_opacity }}'
+        ) }}
+    ">
+        <div class="content-area">
+            <div class="inner-padding">
+                <div class="mb-10 text-center md:text-start">
+                    {{ columns_title }}
+                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                            {{ title }}
+                        </{{ heading }}>
+                    {{ /columns_title }}
+                </div>
+
+                <div class="flex flex-wrap justify-between gap-10">
+                    {{ columns }}
+                        <div class="{{ if column_colour }}p-6{{ else }}py-6{{ /if }} text-center
+                            md:text-start
+                            {{ switch(
+                                (column_gradient == true) => 'bg-gradient-to-r from-[{{ column_colour }}]/{{ column_opacity }} to-[{{ column_secondary_colour }}]/{{ column_opacity }} ',
+                                (column_gradient == false) => 'bg-[{{ column_colour }}] bg-opacity-{{ column_opacity }}'
+                            ) }}
+                            {{# smaller percentage required for the gap #}}
+                            {{ switch(
+                                (column_width_mobile == '25') => 'w-[20%]',
+                                (column_width_mobile == '33') => 'w-[30%]',
+                                (column_width_mobile == '50') => 'w-[45%]',
+                                (column_width_mobile == '66') => 'w-[60%]',
+                                (column_width_mobile == '75') => 'w-[70%]',
+                                (column_width_mobile == '100') => 'w-[100%]',
+                            ) }}
+                            {{# smaller percentage required for the gap #}}
+                            {{ switch(
+                                (column_width_tablet == '25') => 'md:w-[20%]',
+                                (column_width_tablet == '33') => 'md:w-[30%]',
+                                (column_width_tablet == '50') => 'md:w-[45%]',
+                                (column_width_tablet == '66') => 'md:w-[60%]',
+                                (column_width_tablet == '75') => 'md:w-[70%]',
+                                (column_width_tablet == '100') => 'md:w-[100%]',
+                            ) }}
+                            {{# smaller percentage required for the gap #}}
+                            {{ switch(
+                                (column_width_desktop == '25') => 'lg:w-[20%]',
+                                (column_width_desktop == '33') => 'lg:w-[30%]',
+                                (column_width_desktop == '50') => 'lg:w-[45%]',
+                                (column_width_desktop == '66') => 'lg:w-[60%]',
+                                (column_width_desktop == '75') => 'lg:w-[70%]',
+                                (column_width_desktop == '100') => 'lg:w-[100%]',
+                            ) }}
+                        ">
+                        <div>
+                            {{ if column_title }}
+                                {{ column_title }}
+                                    <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
+                                        {{ title }}
+                                    </{{ heading }}>
+                                {{ /column_title }}
+                            {{ /if }}
+
+                            {{ if icon }}
+                                <div class="text-center my-8">
+                                    {{ icon }}
+                                </div>
+                            {{ /if }}
+
+                            {{ if file }}
+                                <div class="flex justify-center md:justify-start">
+
+                                    {{  }}
+                                    {{ if file.is_image }}
+                                        <img src="{{ file }}" alt="Column Image" class="object-contain {{ switch(
+                                            (max_height == '10') => 'max-h-10',
+                                            (max_height == '11') => 'max-h-11',
+                                            (max_height == '12') => 'max-h-12',
+                                            (max_height == '13') => 'max-h-13',
+                                            (max_height == '14') => 'max-h-14',
+                                            (max_height == '16') => 'max-h-16',
+                                            (max_height == '20') => 'max-h-20',
+                                            (max_height == '24') => 'max-h-24',
+                                            (max_height == '28') => 'max-h-28',
+                                            (max_height == '32') => 'max-h-32',
+                                            (max_height == '36') => 'max-h-36',
+                                            (max_height == '40') => 'max-h-40',
+                                            (max_height == '44') => 'max-h-44',
+                                            (max_height == '48') => 'max-h-48',
+                                            (max_height == '52') => 'max-h-52',
+                                            (max_height == '56') => 'max-h-56',
+                                            (max_height == '60') => 'max-h-60',
+                                            (max_height == '64') => 'max-h-64',
+                                            (max_height == '72') => 'max-h-72',
+                                            (max_height == '80') => 'max-h-80',
+                                            (max_height == '96') => 'max-h-96',
+                                            (max_height == 'full') => 'max-h-full',
+                                        ) }}"/>
+                                    {{ else }}
+                                        <video
+                                            playsinline
+                                            autoplay
+                                            muted
+                                            loop
+                                            class="object-contain {{ switch(
+                                                (max_height == '10') => 'max-h-10',
+                                                (max_height == '11') => 'max-h-11',
+                                                (max_height == '12') => 'max-h-12',
+                                                (max_height == '13') => 'max-h-13',
+                                                (max_height == '14') => 'max-h-14',
+                                                (max_height == '16') => 'max-h-16',
+                                                (max_height == '20') => 'max-h-20',
+                                                (max_height == '24') => 'max-h-24',
+                                                (max_height == '28') => 'max-h-28',
+                                                (max_height == '32') => 'max-h-32',
+                                                (max_height == '36') => 'max-h-36',
+                                                (max_height == '40') => 'max-h-40',
+                                                (max_height == '44') => 'max-h-44',
+                                                (max_height == '48') => 'max-h-48',
+                                                (max_height == '52') => 'max-h-52',
+                                                (max_height == '56') => 'max-h-56',
+                                                (max_height == '60') => 'max-h-60',
+                                                (max_height == '64') => 'max-h-64',
+                                                (max_height == '72') => 'max-h-72',
+                                                (max_height == '80') => 'max-h-80',
+                                                (max_height == '96') => 'max-h-96',
+                                                (max_height == 'full') => 'max-h-full',
+                                            ) }}"
+                                        >
+                                            <source src="{{ file }}" type="video/mp4" />
+                                        </video>
+                                    {{ /if }}
+                                </div>
+                            {{ /if }}
+
+                            {{ if column_content }}
+                            <div class="prose text-[{{ column_text_colour }}]">
+                                <style>
+                                    .prose strong, blockquote, ul, ol {
+                                        color: inherit !important;
+                                    }
+                                </style>
+                                {{ column_content | markdown }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if embedded_code }}
+                                {{ embedded_code  }}
+                            {{ /if }}
+                        </div>
+                            <div class="flex mt-10 justify-center md:justify-end">
+                                {{ column_buttons }}
+                                    {{ partial:components/button }}
+                                {{ /column_buttons }}
+                            </div>
+                        </div>
+                    {{ /columns }}
+                </div>
+            </div>
+        </div>
+    </section>
+{{ /partial:page_builder/block }}

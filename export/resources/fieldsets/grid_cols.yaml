@@ -24,7 +24,7 @@ fields:
           value: null
       default: '1'
       type: select
-      display: 'Cols SM'
+      display: 'Cols Mobile'
       width: 33
   -
     handle: cols_md
@@ -50,7 +50,7 @@ fields:
           value: null
       default: '2'
       type: select
-      display: 'Cols MD'
+      display: 'Cols Tablet'
       width: 33
   -
     handle: cols_lg
@@ -76,5 +76,5 @@ fields:
           value: null
       default: '4'
       type: select
-      display: 'Cols LG'
+      display: 'Cols Desktop'
       width: 33

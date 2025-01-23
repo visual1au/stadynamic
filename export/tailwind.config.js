@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  // The various configurable Tailwind configuration files.
+    // The various configurable Tailwind configuration files.
     presets: [
         require('./tailwind.config.stataroid.js'),
     ],

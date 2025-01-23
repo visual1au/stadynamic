@@ -1,0 +1,20 @@
+title: Widths
+fields:
+  -
+    handle: width_mobile
+    field:
+      type: width
+      display: 'Width Mobile'
+      width: 33
+  -
+    handle: width_tablet
+    field:
+      type: width
+      display: 'Width Tablet'
+      width: 33
+  -
+    handle: width_desktop
+    field:
+      type: width
+      display: 'Width Desktop'
+      width: 33

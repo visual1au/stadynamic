@@ -15,5 +15,6 @@ export_paths:
   - tailwind.config.js
   - tailwind.config.stataroid.js
   - vite.config.js
+  - config/filesystems.php
 dependencies:
   gerttimmerman/statamic-zapier: ^1.6

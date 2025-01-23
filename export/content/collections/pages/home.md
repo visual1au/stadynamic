@@ -38,7 +38,6 @@ page_builder:
         id: m51pbl9h
         title: 'WE ARE A'
         heading: h3
-        text_colour: '#ffffff'
         type: title
         enabled: true
       -
@@ -109,7 +108,6 @@ page_builder:
         id: m51q5s27
         title: 'Get Started!'
         heading: h2
-        text_colour: '#000000'
         type: title
         enabled: true
     banner_content: 'Curabitur nec lobortis odio. Nulla mi elit, eleifend vel molestie imperdiet, malesuada in metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eget leo risus. Phasellus ultricies dui dui, interdum bibendum felis accumsan et. Fusce mattis ultricies lacus, in porttitor sem.'
@@ -145,12 +143,11 @@ page_builder:
     banner_bgopacity: 100
     slug: banner
     banner_bg_colour: '#f700f4'
-    banner_bg_gradient: true
+    banner_bg_gradient: false
     banner_bg_secondary: '#ffffff'
     banner_gradient: false
     banner_secondary: '#ffffff'
     banner_bg_opacity: 20
-    banner_bg_secondary_colour: '#00e6f5'
   -
     id: m4w4h0qk
     title: 'Carousel Test'
@@ -307,8 +304,8 @@ page_builder:
     opacity: 0
     faq_bg_colour: '#f700f4'
     faq_bg_opacity: 20
-    layout: row
-    width: 33
+    layout: col
+    width: 50
     faq_text_colour: '#808080'
     faq_content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at suscipit felis. Mauris pharetra erat vitae turpis tincidunt, a porta neque molestie.'
     faq_buttons:
@@ -546,8 +543,84 @@ page_builder:
     cards_bg_gradient: true
     cards_bg_secondary: '#ffffff'
     cards_bg_secondary_colour: '#f700f4'
+  -
+    id: m5ol9hf7
+    slug: columns
+    columns_colour: '#00e6f5'
+    columns_gradient: false
+    columns_opacity: 20
+    columns_title:
+      -
+        id: m5ol9u74
+        title: Columns
+        heading: h2
+        text_colour: '#000000'
+        type: title
+        enabled: true
+    columns_content: 'Cras at risus metus. Integer venenatis blandit purus eu maximus. Sed magna erat, accumsan quis commodo sed, finibus a purus. Integer arcu tellus, luctus sed sem nec, auctor mollis lorem. Aenean sed laoreet nisi. Donec efficitur feugiat magna posuere mollis. Nam sodales, mi nec condimentum vulputate, diam nunc imperdiet massa, eget bibendum arcu velit vel eros.'
+    columns_text_colour: '#000000'
+    type: columns
+    enabled: true
+    columns_bg_colour: '#f700f4'
+    columns_bg_gradient: true
+    columns_bg_opacity: 20
+    columns_bg_secondary_colour: '#00e6f5'
+    columns:
+      -
+        id: m5old7cr
+        column_gradient: false
+        column_title:
+          -
+            id: m5olddf8
+            title: 'Column 1'
+            heading: h3
+            text_colour: '#f700f4'
+            type: title
+            enabled: true
+        column_content: 'Cras at risus metus. Integer venenatis blandit purus eu maximus. Sed magna erat, accumsan quis commodo sed, finibus a purus. Integer arcu tellus, luctus sed sem nec, auctor mollis lorem. Aenean sed laoreet nisi. Donec efficitur feugiat magna posuere mollis. Nam sodales, mi nec condimentum vulputate, diam nunc imperdiet massa, eget bibendum arcu velit vel eros.'
+        column_text_colour: '#000000'
+        type: column
+        enabled: true
+        width: 25
+        column_width_mobile: 100
+        column_width_tablet: 50
+        column_width_desktop: 50
+        column_opacity: 0
+        image: tom.png
+        select_content_type: image_video
+      -
+        id: m5ole3t5
+        column_gradient: false
+        column_opacity: 20
+        width: 50
+        column_title:
+          -
+            id: m5olexzc
+            title: 'Column 2'
+            heading: h3
+            text_colour: '#00e6f5'
+            type: title
+            enabled: true
+        column_text_colour: '#000000'
+        image: tom.png
+        column_buttons:
+          -
+            id: m5olfhb0
+            label: "Let's go!"
+            link_type: url
+            target_blank: false
+            url: /
+            button_type: button
+            button_colour: '#00e6f5'
+        type: column
+        enabled: true
+        column_width_mobile: 100
+        column_width_tablet: 50
+        column_width_desktop: 50
+        select_content_type: image_video
+        file: tom.png
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1736127490
+updated_at: 1737596900
 ---
 ## Welcome to your brand new Statamic site!
 

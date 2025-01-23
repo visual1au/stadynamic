@@ -12,13 +12,13 @@
                 {{ switch(
     (layout == 'row') => 'flex-col text-center md:text-start md:flex-row',
     (layout == 'col') => 'flex-col text-center') }}
-                {{ switch(
-    (layout == 'col' && width == 25) => 'w-[25%]',
-    (layout == 'col' && width == 33) => 'w-[33%]',
-    (layout == 'col' && width == 50) => 'w-[50%]',
-    (layout == 'col' && width == 66) => 'w-[66%]',
-    (layout == 'col' && width == 75) => 'w-[75%]',
-    (layout == 'col' && width == 100) => 'w-[100%]',
+            {{ switch(
+    (layout == 'col' && width == 25) => 'max-w-lg',
+    (layout == 'col' && width == 33) => 'max-w-xl',
+    (layout == 'col' && width == 50) => 'max-w-2xl',
+    (layout == 'col' && width == 66) => 'max-w-4xl',
+    (layout == 'col' && width == 75) => 'max-w-6xl',
+    (layout == 'col' && width == 100) => 'max-w-full',
     ) }}">
                 <header class="
                     {{ switch(

@@ -32,8 +32,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/private'),
-            'serve' => true,
+            'root' => storage_path('app'),
             'throw' => false,
         ],
 
@@ -58,13 +57,28 @@ return [
             // 'visibility' => 'public', // https://statamic.dev/assets#visibility
         ],
 
-        'assets' => [
-            'driver' => 'local',
-            'root' => public_path('assets'),
-            'url' => '/assets',
-            'visibility' => 'public',
-            'throw' => false,
-        ],
+        'assets' => config('app.env') === "local"
+            ?
+            [
+                'driver' => 'local',
+                'root' => public_path('assets'),
+                'url' => '/assets',
+                'visibility' => 'public',
+                'throw' => false,
+            ]
+            : [
+                'driver' => 's3',
+                'key' => env('AWS_ACCESS_KEY_ID'),
+                'secret' => env('AWS_SECRET_ACCESS_KEY'),
+                'region' => env('AWS_DEFAULT_REGION'),
+                'bucket' => env('AWS_ASSET_BUCKET'),
+                'url' => env('AWS_URL'),
+                'endpoint' => env('AWS_ENDPOINT'),
+                'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+                'throw' => false,
+                'root' => config('app.env') . DIRECTORY_SEPARATOR . 'uploaded_assets/',
+                'visibility' => 'public',
+            ],
 
     ],
 

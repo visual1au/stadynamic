@@ -11,7 +11,6 @@ fields:
         - '#ffffff'
       type: color
       display: Colour
-      default: '#ffffff'
       width: 75
   -
     handle: gradient
@@ -30,8 +29,6 @@ fields:
         - '#ffffff'
       type: color
       display: 'Secondary Colour'
-      default: '#ffffff'
-      width: 75
       if:
         gradient: 'equals true'
   -
