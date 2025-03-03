@@ -31,7 +31,7 @@ fields:
                   import: faq
             panels:
               display: Panels
-              icon: arrow-roadmap-path-flow
+              icon: dashboard-layout-3
               fields:
                 -
                   import: panels
@@ -65,6 +65,12 @@ fields:
               fields:
                 -
                   import: cards
+            steps:
+              display: Steps
+              icon: arrow-roadmap-path-flow
+              fields:
+                -
+                  import: steps
             columns:
               display: Columns
               icon: layout-three-columns

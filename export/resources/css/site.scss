@@ -5,6 +5,7 @@
 @use "variables";
 
 @use "layouts/global";
+@use "layouts/splash";
 
 // Components
 @use "components/button";
@@ -17,6 +18,7 @@
 @use "page_builder/panels";
 @use "page_builder/faq";
 @use "page_builder/banner";
+@use "page_builder/steps";
 
 // Navigation
 @use "navigation/nav";

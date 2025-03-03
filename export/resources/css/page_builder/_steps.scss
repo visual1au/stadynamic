@@ -1,0 +1,60 @@
+.steps {
+    .inner-padding {
+        h2 {
+            @apply text-center lg:text-4xl md:text-3xl text-2xl
+        }
+
+        .steps-grid {
+            @apply pb-24;
+
+            .step-wrapper {
+                @apply relative;
+                @apply flex flex-col sm:block;
+                @apply min-h-[300px] h-full;
+                @apply text-center;
+
+                .spacer-wrapper {
+                    @apply relative sm:absolute;
+                    @apply sm:top-[12%] md:top-[10%] sm:right-[20px] md:right-0;
+                    @apply sm:translate-x-1/2;
+                    @apply sm:z-10;
+
+                    img {
+                        @apply mx-auto;
+                        @apply sm:max-w-[40px] md:max-w-[50px] lg:max-w-[60px];
+                        @apply pb-4;
+                    }
+                }
+
+                .step-outer {
+                    @apply w-full h-full;
+
+                    .step-inner {
+                        @apply flex flex-col items-center justify-start gap-2;
+                        @apply w-full h-full;
+                        @apply p-4;
+
+                        img {
+                            @apply size-20;
+                            @apply bg-white;
+                            @apply p-2.5 mb-4;
+                            @apply rounded-full;
+                            @apply overflow-visible;
+                        }
+
+                        h6 {
+                            @apply bg-primary;
+                            @apply rounded-full;
+                            @apply px-3 py-1;
+                            @apply text-white font-medium;
+                        }
+
+                        .step-text {
+                            @apply text-sm font-medium;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

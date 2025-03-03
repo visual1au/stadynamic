@@ -1,0 +1,101 @@
+title: 'Background Image'
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+  -
+    handle: size
+    field:
+      options:
+        -
+          key: bg-auto
+          value: Auto
+        -
+          key: bg-cover
+          value: Cover
+        -
+          key: bg-contain
+          value: Contain
+        -
+          key: custom
+          value: Custom
+      clearable: true
+      type: select
+      display: Size
+      width: 50
+  -
+    handle: custom_size
+    field:
+      type: text
+      display: 'Custom Size'
+      width: 50
+  -
+    handle: repeat
+    field:
+      options:
+        -
+          key: bg-repeat
+          value: Repeat
+        -
+          key: bg-no-repeat
+          value: 'No Repeat'
+        -
+          key: bg-repeat-x
+          value: 'Repeat Horizontally (X) Only'
+        -
+          key: bg-repeat-y
+          value: 'Repeat Vertically (Y) Only'
+        -
+          key: bg-repeat-round
+          value: Round
+        -
+          key: bg-repeat-space
+          value: Space
+      clearable: true
+      type: select
+      display: Repeat
+  -
+    handle: position
+    field:
+      options:
+        -
+          key: bg-bottom
+          value: Bottom
+        -
+          key: bg-center
+          value: Center
+        -
+          key: bg-left
+          value: Left
+        -
+          key: bg-left-bottom
+          value: 'Left Bottom'
+        -
+          key: bg-left-top
+          value: 'Left Top'
+        -
+          key: bg-right
+          value: Right
+        -
+          key: bg-right-bottom
+          value: 'Right Bottom'
+        -
+          key: bg-top
+          value: Top
+        -
+          key: custom
+          value: Custom
+      clearable: true
+      type: select
+      display: Position
+      width: 50
+  -
+    handle: custom_position
+    field:
+      type: text
+      display: 'Custom Position'
+      width: 50

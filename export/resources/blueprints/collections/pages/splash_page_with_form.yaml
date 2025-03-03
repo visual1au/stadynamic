@@ -1,0 +1,57 @@
+title: 'Splash Page with Form'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+          -
+            import: colour_picker
+            prefix: splash_bg_
+          -
+            import: header
+            prefix: splash_
+          -
+            import: image
+            prefix: splash_
+          -
+            import: markdown_content
+            prefix: splash_
+          -
+            handle: form
+            field:
+              max_items: 1
+              type: form
+              display: Form
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

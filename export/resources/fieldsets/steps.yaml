@@ -1,0 +1,59 @@
+title: Steps
+fields:
+  -
+    import: colour_picker
+    prefix: steps_bg_
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+      instructions: 'The slug is required for anchored links.'
+  -
+    import: background_image
+    prefix: step_bg_
+  -
+    import: header
+    prefix: steps_
+  -
+    handle: spacer_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Spacer Image'
+  -
+    import: grid_cols
+    prefix: steps_
+  -
+    handle: steps
+    field:
+      type: replicator
+      display: Steps
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Icon
+                    instructions: 'Recommended to be a circular SVG or PNG with transparency'
+                -
+                  handle: heading
+                  field:
+                    character_limit: 30
+                    type: text
+                    display: Heading
+                -
+                  handle: content
+                  field:
+                    character_limit: 150
+                    type: textarea
+                    display: Content

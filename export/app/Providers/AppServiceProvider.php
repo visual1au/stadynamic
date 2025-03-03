@@ -8,7 +8,6 @@ use Statamic\Events\GlobalSetSaved;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -31,9 +30,11 @@ class AppServiceProvider extends ServiceProvider
             }
         });
 
-        Form::redirect('contact', function ($submission) {
-            return 'success';
-        });
+        foreach (Form::all() as $form) {
+            Form::redirect($form->handle, function ($submission) {
+                return 'success';
+            });
+        }
     }
 
     protected function updateColourPickerFieldset($themeSettings)
@@ -46,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
             ->pluck('color')
             ->toArray();
 
-        if (! empty($swatches)) {
+        if (!empty($swatches)) {
             // Find the fieldset
             $fieldset = Fieldset::find('colour_picker');
 

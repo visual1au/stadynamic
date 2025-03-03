@@ -4,9 +4,11 @@
 #}}
 
 <!-- /default.antlers.html -->
+{{ partial:navigation/nav }}
 <main>
     {{ page_builder scope="block" }}
         {{ partial src="page_builder/{type}" }}
     {{ /page_builder }}
 </main>
+{{ partial:navigation/footer }}
 <!-- End: /default.antlers.html -->

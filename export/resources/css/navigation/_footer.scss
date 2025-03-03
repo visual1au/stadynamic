@@ -16,10 +16,10 @@ footer {
             }
 
             ul {
-                @apply text-gray-500 font-medium space-y-4;
+                @apply font-medium space-y-4;
 
                 a {
-                    @apply hover:underline;
+                    @apply text-gray-500 hover:underline;
                 }
             }
         }

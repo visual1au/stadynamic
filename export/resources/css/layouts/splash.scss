@@ -1,0 +1,35 @@
+section.splash {
+    @apply relative h-full min-h-screen;
+
+    .content-area {
+        @apply relative flex justify-center;
+
+        .inner-padding {
+            @apply block relative py-5;
+
+            img.splash_image {
+                @apply relative mx-auto my-10;
+            }
+
+            .splash_intro {
+                @apply relative text-center block max-w-2xl mx-auto my-5;
+
+                hr {
+                    @apply my-10 border-primary;
+                }
+
+                a {
+                    @apply text-secondary;
+
+                    &:hover {
+                        @apply drop-shadow-lg underline;
+                    }
+                }
+            }
+        }
+    }
+
+    form {
+        @apply block mt-8 mb-40 mx-auto;
+    }
+}

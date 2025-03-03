@@ -1,9 +1,13 @@
 updatable: true
 export_paths:
   - app/Providers/AppServiceProvider.php
+  - app/Widgets
   - content
   - config/filesystems.php
   - config/statamic/assets.php
+  - config/statamic/protect.php
+  - config/statamic/cp.php
+  - content/globals
   - resources
   - .env.example
   - bitbucket-pipelines.yml

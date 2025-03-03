@@ -544,6 +544,56 @@ page_builder:
     cards_bg_secondary: '#ffffff'
     cards_bg_secondary_colour: '#f700f4'
   -
+    id: m68igs3j
+    steps_bg_colour: '#f700f4'
+    steps_bg_gradient: true
+    steps_bg_secondary_colour: '#00e6f5'
+    steps_bg_opacity: 20
+    slug: steps
+    steps_cols_sm: '1'
+    steps_cols_md: '2'
+    steps_cols_lg: '4'
+    steps:
+      -
+        id: m68l9wdw
+        heading: 'Be Awesome'
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+        type: new_set
+        enabled: true
+        icon: tom.png
+      -
+        id: m68mhgdv
+        icon: tom.png
+        heading: 'Stay Awesome'
+        content: 'Sed do eiusmod tempor incididunt ut labore'
+        type: new_set
+        enabled: true
+      -
+        id: m68naovp
+        icon: tom.png
+        heading: 'Look Awesome'
+        content: 'Ut enim ad minim veniam quis nostrud exercitation ullamco'
+        type: new_set
+        enabled: true
+      -
+        id: m68nbbuu
+        icon: tom.png
+        heading: 'Tell Everyone You’re Awesome'
+        content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse'
+        type: new_set
+        enabled: true
+    type: steps
+    enabled: true
+    steps_title:
+      -
+        id: m68mk2q9
+        title: 'How We Do It'
+        heading: h2
+        text_colour: '#ffffff'
+        type: title
+        enabled: true
+    spacer_image: right-arrow.svg
+  -
     id: m5ol9hf7
     slug: columns
     columns_colour: '#00e6f5'
