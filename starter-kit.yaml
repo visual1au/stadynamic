@@ -13,7 +13,7 @@ export_paths:
   - bitbucket-pipelines.yml
   - production.Dockerfile
   - vapor.yml
-  - public
+  - public/assets
   - package.json
   - README.md
   - tailwind.config.js
