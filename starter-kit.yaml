@@ -11,6 +11,7 @@ export_paths:
   - resources
   - .env.example
   - bitbucket-pipelines.yml
+  - postcss.config.js
   - production.Dockerfile
   - vapor.yml
   - public/assets
@@ -19,6 +20,5 @@ export_paths:
   - tailwind.config.js
   - tailwind.config.stataroid.js
   - vite.config.js
-  - config/filesystems.php
 dependencies:
   gerttimmerman/statamic-zapier: ^1.6
