@@ -1,0 +1,116 @@
+{{ partial:page_builder/block }}
+    <div x-data="{
+    modalIsOpen: false,
+    showModal() {
+        if (!localStorage.getItem('modalClosed')) {
+            setTimeout(() => {
+                this.modalIsOpen = true;
+            }, {{ seconds_to_display * 1000 }});
+        }
+    }
+}" x-init="showModal()">
+        <div x-cloak x-show="modalIsOpen" x-transition.opacity.duration.200ms x-trap.inert.noscroll="modalIsOpen" x-on:keydown.esc.window="modalIsOpen = false; localStorage.setItem('modalClosed', true)" x-on:click.self="modalIsOpen = false; localStorage.setItem('modalClosed', true)" class="fixed inset-0 z-50 flex justify-center bg-black/20 p-4 pb-8 backdrop-blur-md items-center lg:p-8" role="dialog" aria-modal="true">
+            <!-- Modal Dialog -->
+            <div x-show="modalIsOpen" x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" x-transition:enter-start="opacity-0 scale-50" x-transition:enter-end="opacity-100 scale-100" class="flex max-w-4xl flex-col overflow-hidden">
+                <!-- Promotion -->
+                {{ if modal_type == 'promotion' }}
+                    <div class="block relative">
+                        <!-- Dialog Header -->
+                        <div class="flex right-0 top-0 p-4 absolute">
+                            <button x-on:click="modalIsOpen = false; localStorage.setItem('modalClosed', true)" aria-label="close modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <a href="{{ promo_link }}" target="_blank">
+                            <img src="{{ promo_image }}" alt="Promo" class="w-full">
+                        </a>
+                    </div>
+                <!-- Form -->
+                {{ elseif modal_type == 'form' }}
+                    <div class="block form-section bg-white rounded-2xl
+                    ">
+                        <div class="{{ switch(
+                            (engagement_modal_bg_gradient == true) => 'bg-gradient-to-r from-[{{ engagement_modal_bg_colour }}]/{{ engagement_modal_bg_opacity }} to-[{{ engagement_modal_bg_secondary_colour }}]/{{ engagement_modal_bg_opacity }} ',
+                            (engagement_modal_bg_gradient == false) => 'bg-[{{ engagement_modal_bg_colour }}] bg-opacity-{{ engagement_modal_bg_opacity }}'
+                            ) }} p-4 md:p-12 rounded-2xl relative">
+                            <!-- Dialog Header -->
+                            <div class="flex right-0 top-0 p-4 absolute">
+                                <button x-on:click="modalIsOpen = false; localStorage.setItem('modalClosed', true)" aria-label="close modal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            {{ if form:handle }}
+                                {{ form:create :in="form:handle" js="alpine:form" attr:x-ref="form" }}
+                                    {{ if errors }}
+                                        <div id="form-errors" class="p-4 mb-4 text-sm text-white rounded-lg bg-secondary" role="alert">
+                                            <span class="font-bold">Something doesn't look right.</span> Please
+                                            check the following required fields:
+                                            <ul class="max-w-md space-y-1 list-disc list-inside mt-2">
+                                                {{ errors }}
+                                                    <li>{{ value }}</li>
+                                                {{ /errors }}
+                                            </ul>
+                                        </div>
+                                    {{ /if }}
+                                    <div class="flex flex-wrap -mx-2 text-start">
+                                        {{ sections }}
+                                            <header class="mb-4 px-2 w-full space-y-2">
+                                                <h3 class="font-bold">{{ display}}</h3>
+                                                <p>{{ instructions }}</p>
+                                            </header>
+                                            {{ fields }}
+                                                <template x-if="{{ show_field }}">
+                                                    <div class="mb-8 px-2 {{ if width == '50' }}md:w-1/2 w-full{{ else }}w-full{{ /if }}">
+                                                        <label class="text-dark">
+                                                            {{ display }}
+                                                            {{ if validate | contains:required }}
+                                                                <sup class="error">*</sup>
+                                                            {{ /if }}
+                                                        </label>
+                                                        <div>
+                                                            {{ if handle == 'submission_date' }}
+                                                                <input type="hidden" name="submission_date" value="{{ now }}" />
+                                                            {{ else }}
+                                                                {{ field }}
+                                                            {{ /if }}
+                                                        </div>
+                                                        {{ if error }}
+                                                            <p class="error text-xs mt-1">{{ error }}</p>
+                                                        {{ /if }}
+                                                    </div>
+                                                </template>
+                                            {{ /fields }}
+                                        {{ /sections }}
+
+                                        <!-- Honeypot - must match honeypot field name in CP Form config -->
+                                        <div class="mb-4 px-2 w-full poohbear">
+                                            <label class="text-secondary">Form Username<sup class="error">*</sup></label>
+                                            <div><input type="text" name="form_username" /></div>
+                                        </div>
+
+                                        <!-- Hidden field with submission date -->
+                                        <input type="hidden" name="submission_date" value="{{ now format="Y-m-d
+                H:i:s" }}">
+                                    </div>
+                                    <div class="text-right">
+                                        <button class="btn bg-primary text-right" type="submit">Submit</button>
+                                    </div>
+                                {{ /form:create }}
+                            {{ /if }}
+                        </div>
+                    </div>
+                {{ /if }}
+            </div>
+        </div>
+
+        <div class="relative">
+            <button x-on:click="localStorage.removeItem('modalClosed'); location.reload();" class="text-transparent absolute bottom-0 left-0">
+                Reset
+            </button>
+        </div>
+    </div>
+{{ /partial:page_builder/block }}

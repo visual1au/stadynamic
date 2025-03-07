@@ -669,8 +669,20 @@ page_builder:
         column_width_desktop: 50
         select_content_type: image_video
         file: tom.png
+  -
+    id: m7y79ao8
+    modal_type: form
+    type: engagement_modal
+    enabled: true
+    form: contact
+    engagement_modal_bg_colour: '#00e6f5'
+    engagement_modal_bg_gradient: true
+    engagement_modal_bg_secondary_colour: '#f700f4'
+    engagement_modal_bg_opacity: 20
+    seconds_to_display: 5
+    expiry_date: '2025-03-08'
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1737596900
+updated_at: 1741320816
 ---
 ## Welcome to your brand new Statamic site!
 

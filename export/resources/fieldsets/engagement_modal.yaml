@@ -1,0 +1,59 @@
+title: 'Engagement Modal'
+fields:
+  -
+    handle: seconds_to_display
+    field:
+      default: '5'
+      type: integer
+      display: 'Seconds to Display'
+      instructions: 'How long after the page loads should the modal appear? The modal will only appear once, but there is a hidden reset button on the bottom left, just above the footer.'
+      validate:
+        - required
+  -
+    handle: modal_type
+    field:
+      options:
+        -
+          key: promotion
+          value: Promotion
+        -
+          key: form
+          value: Form
+      type: select
+      display: 'Modal Type'
+      instructions: 'Please select type of engagement'
+  -
+    handle: promo_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Promo Image'
+      width: 50
+      validate:
+        - sometimes
+      if:
+        modal_type: 'equals promotion'
+  -
+    handle: promo_link
+    field:
+      type: link
+      display: 'Promo Link'
+      width: 50
+      validate:
+        - sometimes
+      if:
+        modal_type: 'equals promotion'
+  -
+    handle: form
+    field:
+      max_items: 1
+      type: form
+      display: Form
+      if:
+        modal_type: 'equals form'
+      validate:
+        - sometimes
+  -
+    import: colour_picker
+    prefix: engagement_modal_bg_

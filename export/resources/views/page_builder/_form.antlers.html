@@ -64,28 +64,34 @@
                                 </div>
                             {{ /if }}
                             <div class="flex flex-wrap -mx-2 text-start">
-                                {{ fields }}
-                                    <template x-if="{{ show_field }}">
-                                        <div class="mb-4 px-2 {{ if width == '50' }}md:w-1/2 w-full{{ else }}w-full{{ /if }}">
-                                            <label class="text-dark">
-                                                {{ display }}
-                                                {{ if validate | contains:required }}
-                                                    <sup class="error">*</sup>
-                                                {{ /if }}
-                                            </label>
-                                            <div>
-                                                {{ if handle == 'submission_date' }}
-                                                    <input type="hidden" name="submission_date" value="{{ now }}" />
-                                                {{ else }}
-                                                    {{ field }}
+                                {{ sections }}
+                                    <header class="mb-4 px-2 w-full space-y-2">
+                                        <h3 class="font-bold">{{ display}}</h3>
+                                        <p>{{ instructions }}</p>
+                                    </header>
+                                    {{ fields }}
+                                        <template x-if="{{ show_field }}">
+                                            <div class="mb-8 px-2 {{ if width == '50' }}md:w-1/2 w-full{{ else }}w-full{{ /if }}">
+                                                <label class="text-dark">
+                                                    {{ display }}
+                                                    {{ if validate | contains:required }}
+                                                        <sup class="error">*</sup>
+                                                    {{ /if }}
+                                                </label>
+                                                <div>
+                                                    {{ if handle == 'submission_date' }}
+                                                        <input type="hidden" name="submission_date" value="{{ now }}" />
+                                                    {{ else }}
+                                                        {{ field }}
+                                                    {{ /if }}
+                                                </div>
+                                                {{ if error }}
+                                                    <p class="error text-xs mt-1">{{ error }}</p>
                                                 {{ /if }}
                                             </div>
-                                            {{ if error }}
-                                                <p class="error text-xs mt-1">{{ error }}</p>
-                                            {{ /if }}
-                                        </div>
-                                    </template>
-                                {{ /fields }}
+                                        </template>
+                                    {{ /fields }}
+                                {{ /sections }}
 
                                 <!-- Honeypot - must match honeypot field name in CP Form config -->
                                 <div class="mb-4 px-2 w-full poohbear">
@@ -97,7 +103,7 @@
                                 <input type="hidden" name="submission_date" value="{{ now format="Y-m-d
         H:i:s" }}">
                             </div>
-                            <div class="mt-6 text-right">
+                            <div class="text-right">
                                 <button class="btn bg-primary text-right" type="submit">Submit</button>
                             </div>
                         {{ /form:create }}

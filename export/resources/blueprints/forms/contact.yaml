@@ -3,6 +3,8 @@ tabs:
     display: Main
     sections:
       -
+        display: 'Lorem Ipsum'
+        instructions: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus erat est, mattis quis ipsum vitae, rutrum sagittis odio. Donec bibendum egestas urna id tempor'
         fields:
           -
             handle: first_name
@@ -28,11 +30,13 @@ tabs:
               display: Email
               validate:
                 - required
+      -
+        display: 'Lorem Ipsum'
+        instructions: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus erat est, mattis quis ipsum vitae, rutrum sagittis odio. Donec bibendum egestas urna id tempor'
+        fields:
           -
             handle: message
             field:
               placeholder: 'Write something...'
               type: textarea
               display: Message
-              if:
-                first_name: 'contains Alex'

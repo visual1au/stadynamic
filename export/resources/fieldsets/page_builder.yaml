@@ -77,6 +77,12 @@ fields:
               fields:
                 -
                   import: columns
+            engagement_modal:
+              display: 'Engagement Modal'
+              icon: layout-header
+              fields:
+                -
+                  import: engagement_modal
         text:
           display: Text
           instructions: 'Text based blocks.'
