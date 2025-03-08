@@ -7,15 +7,25 @@
     <div class="content-area">
         <div class="inner-padding">
 
+            {{ if splash_image }}
+                <img src="{{ splash_image }}" alt="splash-image" class="splash_image {{ switch(
+                    (splash_size == 'xs') => 'w-1/12',
+                    (splash_size == 'sm') => 'w-1/6',
+                    (splash_size == 'md') => 'w-1/4',
+                    (splash_size == 'lg') => 'w-1/2',
+                    (splash_size == 'xl') => 'w-full',
+                    () => 'span-md') }}" />
+            {{ else }}
+                {{ if company:logo }}
+                    <img src="{{ company:logo }}" alt="splash-image" class="splash_image max-w-lg" />
+                {{ /if }}
+            {{ /if }}
+
             {{ splash_title }}
                 <{{ heading }} class="text-center flex-1 mb-4 text-[{{ text_colour }}]">
                     {{ title }}
                 </{{ heading }}>
             {{ /splash_title }}
-
-        {{ if splash_image }}
-            <img src="{{ splash_image }}" alt="splash-image" class="splash_image">
-        {{ /if }}
 
         {{ if splash_content }}
             <div class="splash_intro">
@@ -27,60 +37,74 @@
     </div>
 
     {{ if form:handle }}
-    <div class="form-section splash-form">
-        {{ form:create :in="form:handle" js="alpine:form" attr:x-ref="form" }}
-        {{ if errors }}
-        <div id="form-errors" class="p-4 mb-4 text-sm text-white rounded-lg bg-secondary" role="alert">
-            <span class="font-bold">Something doesn't look right.</span> Please
-            check the following required fields:
-            <ul class="max-w-md space-y-1 list-disc list-inside mt-2">
-                {{ errors }}
-                <li>{{ value }}</li>
-                {{ /errors }}
-            </ul>
-        </div>
-        {{ /if }}
-        <div class="flex flex-wrap -mx-2 text-start">
-            {{ fields }}
-            <template x-if="{{ show_field }}">
-                <div class="mb-4 px-2 {{ if width == '50' }}md:w-1/2 w-full{{ else }}w-full{{ /if }}">
-                    <label class="text-dark">
-                        {{ display }}
-                        {{ if validate | contains:required }}
-                        <sup class="error">*</sup>
-                        {{ /if }}
-                    </label>
-                    <div>
-                        {{ if handle == 'submission_date' }}
-                        <input type="hidden" name="submission_date" value="{{ now }}" />
-                        {{ else }}
-                        {{ field }}
-                        {{ /if }}
+        <div class="form-section splash-form">
+            {{ form:create :in="form:handle" js="alpine:form" attr:x-ref="form" }}
+                {{ if errors }}
+                    <div id="form-errors" class="p-4 mb-4 text-sm text-white rounded-lg bg-secondary" role="alert">
+                        <span class="font-bold">Something doesn't look right.</span> Please check the following required fields:
+                            <ul class="max-w-md space-y-1 list-disc list-inside mt-2">
+                                {{ errors }}
+                                    <li>{{ value }}</li>
+                                {{ /errors }}
+                            </ul>
                     </div>
-                    {{ if error }}
-                    <p class="error text-xs mt-1">{{ error }}</p>
-                    {{ /if }}
+                {{ /if }}
+                <div class="flex flex-wrap -mx-2 text-start">
+                    {{ sections }}
+                        <header class="mb-4 px-2 w-full space-y-2">
+                            <h3 class="font-bold">{{ display}}</h3>
+                            <p>{{ instructions }}</p>
+                        </header>
+                        {{ fields }}
+                            <template x-if="{{ show_field }}">
+                                <div class="field-{{ handle }} mb-4 px-2 {{ if width == '50' }}md:w-1/2 w-full{{ else }}w-full{{ /if }}">
+                                    <label class="text-dark {{ handle }}">
+                                        {{ display }}
+                                        {{ if validate | contains:required }}
+                                            <sup class="error">*</sup>
+                                        {{ /if }}
+                                    </label>
+                                    <div>
+                                        {{ if handle == 'submission_date' }}
+                                            <input type="hidden" name="submission_date" value="{{ now }}" />
+                                        {{ else }}
+                                            {{ field }}
+                                        {{ /if }}
+                                    </div>
+                                    {{ if error }}
+                                        <p class="error text-xs mt-1">{{ error }}</p>
+                                    {{ /if }}
+                                </div>
+                            </template>
+                        {{ /fields }}
+                    {{ /sections }}
+
+                    <!-- Honeypot - must match honeypot field name in CP Form config -->
+                    <div class="mb-4 px-2 w-full poohbear">
+                        <label class="text-secondary">Form Username<sup class="error">*</sup></label>
+                        <div><input type="text" name="form_username" /></div>
+                    </div>
+
+                    <!-- Hidden field with submission date -->
+                    <input type="hidden" name="submission_date" value="{{ now format="Y-m-d H:i:s" }}">
                 </div>
-            </template>
-            {{ /fields }}
-
-            <!-- Honeypot - must match honeypot field name in CP Form config -->
-            <div class="mb-4 px-2 w-full poohbear">
-                <label class="text-secondary">Form Username<sup class="error">*</sup></label>
-                <div><input type="text" name="form_username" /></div>
-            </div>
-
-            <!-- Hidden field with submission date -->
-            <input type="hidden" name="submission_date" value="{{ now format="Y-m-d
-                   H:i:s" }}">
+                <div class="mt-6 text-right">
+                    <button class="btn bg-primary text-right" type="submit">Submit</button>
+                </div>
+            {{ /form:create }}
         </div>
-        <div class="mt-6 text-right">
-            <button class="btn bg-primary text-right" type="submit">Submit</button>
-        </div>
-        {{ /form:create }}
-    </div>
     {{ /if }}
 
+    <div class="splash-footer">
+        <div class="social-links">
+            {{ company:social_links }}
+                <a href="{{ link }}">
+                    {{ fontawesome_icon }}
+                </a>
+            {{ /company:social_links }}
+        </div>
+
+        <span class="copyright">&copy {{ now | format('Y') }} {{ company:name }}. All Rights Reserved.</span>
+    </div>
+
 </section>
-
-

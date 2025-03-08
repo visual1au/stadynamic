@@ -1,11 +1,15 @@
 section.splash {
-    @apply relative h-full min-h-screen;
+    @apply relative h-full min-h-screen bg-primary;
 
     .content-area {
         @apply relative flex justify-center;
 
         .inner-padding {
             @apply block relative py-5;
+
+            h1 {
+                @apply text-4xl font-bold text-center drop-shadow-md text-secondary;
+            }
 
             img.splash_image {
                 @apply relative mx-auto my-10;
@@ -19,17 +23,71 @@ section.splash {
                 }
 
                 a {
-                    @apply text-secondary;
+                    @apply text-white underline;
+                    @apply transition-all hover:drop-shadow-lg hover:text-gray-600
+                }
 
-                    &:hover {
-                        @apply drop-shadow-lg underline;
-                    }
+                hr {
+                    @apply border-gray-400;
                 }
             }
         }
     }
 
-    form {
-        @apply block mt-8 mb-40 mx-auto;
+    .splash-form {
+        @apply block max-w-2xl mb-20;
+
+        form {
+            @apply mt-8 w-full bg-white p-6 rounded-lg shadow-xl;
+
+            #form-errors {
+                @apply bg-red-400 border-2 border-red-700;
+            }
+
+            label {
+                @apply font-bold;
+            }
+
+            label.custom_label_1, label.custom_label_2 {
+                @apply block w-full text-gray-800 pb-3 text-xl text-center;
+            }
+
+            input, select, textarea {
+                @apply border-gray-500;
+                @apply focus:ring-black focus:ring-1 focus:bg-yellow-100;
+                @apply focus:outline-none;
+            }
+
+            input[type="checkbox"] {
+                @apply w-4;
+            }
+
+            .field-availability_for_interview_time label:has(input[type="checkbox"]) {
+                @apply inline-flex indent-2 font-normal;
+            }
+
+            button[type="submit"] {
+                @apply bg-gray-300 border-2 border-gray-300 text-gray-500;
+                @apply transition-all hover:bg-gray-500 hover:border-black hover:shadow-xl hover:text-white;
+            }
+        }
+    }
+
+    .splash-footer {
+        @apply relative h-full;
+
+        .social-links {
+            @apply flex justify-center gap-4 max-w-2xl mb-10 mx-auto;
+
+            a {
+                @apply text-xl;
+                @apply transition-all;
+                @apply hover:text-secondary;
+            }
+        }
+
+        .copyright {
+            @apply flex justify-center mb-10;
+        }
     }
 }
