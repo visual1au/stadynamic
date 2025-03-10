@@ -681,8 +681,26 @@ page_builder:
     engagement_modal_bg_opacity: 20
     seconds_to_display: 5
     expiry_date: '2025-03-08'
+  -
+    id: m82ihfic
+    slug: news
+    news_title:
+      -
+        id: m82ihjwn
+        title: News
+        heading: h2
+        text_colour: '#000000'
+        type: title
+        enabled: true
+    news_bg_colour: '#00e6f5'
+    news_bg_gradient: true
+    news_bg_secondary_colour: '#f700f4'
+    news_bg_opacity: 20
+    limit: 3
+    type: news
+    enabled: true
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1741323429
+updated_at: 1741577873
 ---
 ## Welcome to your brand new Statamic site!
 

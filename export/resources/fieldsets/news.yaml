@@ -1,0 +1,31 @@
+title: News
+fields:
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+  -
+    import: header
+    prefix: news_
+  -
+    import: colour_picker
+    prefix: news_bg_
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+      instructions: 'Limit entries to show (leave empty to show all)'
+      width: 50
+  -
+    handle: paginate
+    field:
+      type: integer
+      display: Paginate
+      instructions: 'Pagination limit per page (required if limit is not set)'
+      width: 50
+      validate:
+        - 'required_if:limit,null'
+      if:
+        limit: '< 1'

@@ -83,6 +83,12 @@ fields:
               fields:
                 -
                   import: engagement_modal
+            news:
+              display: News
+              icon: media-news-paper
+              fields:
+                -
+                  import: news
         text:
           display: Text
           instructions: 'Text based blocks.'

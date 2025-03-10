@@ -1,0 +1,13 @@
+<div class="bg-white space-y-4 text-center p-4 rounded-2xl flex flex-col">
+    <h4>{{ title }}</h4>
+    <img class="object-cover transition w-full h-56 md:h-72" src="{{ featured_image }}" alt="{{ title }}">
+    <div class="prose line-clamp-3">
+        {{ content }}
+    </div>
+    <div>
+        <a href="{{ url }}" class="hover:text-primary">
+            <strong>READ MORE</strong>
+            <i class="fa-regular fa-chevron-right"></i>
+        </a>
+    </div>
+</div>

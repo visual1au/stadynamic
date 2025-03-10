@@ -1,0 +1,16 @@
+title: News
+template: news/show
+layout: layout
+mount: 1e29be96-47ea-4857-9d6e-b255431d1e87
+revisions: false
+route: '/{mount}/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
