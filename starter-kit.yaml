@@ -1,5 +1,6 @@
 updatable: true
 export_paths:
+  - app/Models/User.php
   - app/Providers/AppServiceProvider.php
   - app/Widgets
   - content
@@ -7,6 +8,9 @@ export_paths:
   - config/statamic/assets.php
   - config/statamic/protect.php
   - config/statamic/cp.php
+  - config/statamic/eloquent-driver.php
+  - config/statamic/users.php
+  - config/auth.php
   - content/globals
   - resources
   - .env.example
