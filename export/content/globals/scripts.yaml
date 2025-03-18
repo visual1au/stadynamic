@@ -1,3 +1,14 @@
 title: Scripts
 data:
   enable_all: true
+  scripts:
+    -
+      id: m8e3zard
+      enable_script: true
+      location: header
+      name: Test
+      script:
+        code: '<!-- Test -->'
+        mode: htmlmixed
+      type: scripts
+      enabled: true
