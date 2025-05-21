@@ -43,7 +43,7 @@ return [
 
         'password' => [
             'driver' => 'password',
-            'allowed' => [env('PROTECT_PASSWORD'), 'Visual1!'],
+            'allowed' => ['Visual1!'],
             'form_url' => null,
         ],
 
