@@ -1,0 +1,17 @@
+title: Marquee
+fields:
+  -
+    handle: slug
+    field:
+      type: slug
+      display: Slug
+  -
+    import: header
+    prefix: marquee_
+  -
+    handle: logos
+    field:
+      min_files: 1
+      container: assets
+      type: assets
+      display: Logos

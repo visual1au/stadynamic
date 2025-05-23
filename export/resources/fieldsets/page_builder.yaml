@@ -89,6 +89,12 @@ fields:
               fields:
                 -
                   import: news
+            marquee:
+              display: Marquee
+              icon: layout-carousel-horizontal
+              fields:
+                -
+                  import: marquee
         text:
           display: Text
           instructions: 'Text based blocks.'

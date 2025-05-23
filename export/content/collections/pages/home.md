@@ -149,6 +149,26 @@ page_builder:
     banner_secondary: '#ffffff'
     banner_bg_opacity: 20
   -
+    id: mb0bioec
+    logos:
+      - balloons.jpeg
+      - cat.jpeg
+      - drop.jpeg
+      - lizard.jpeg
+      - moon.jpeg
+      - mountains.jpeg
+    type: marquee
+    enabled: true
+    marquee_title:
+      -
+        id: mb0fselj
+        title: 'Trusted Partners'
+        heading: h2
+        text_colour: '#000000'
+        type: title
+        enabled: true
+    slug: trusted-partners
+  -
     id: m4w4h0qk
     title: 'Carousel Test'
     text: Test
@@ -700,7 +720,7 @@ page_builder:
     type: news
     enabled: true
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1741577873
+updated_at: 1747982966
 ---
 ## Welcome to your brand new Statamic site!
 
