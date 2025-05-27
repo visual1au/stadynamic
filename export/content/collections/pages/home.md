@@ -155,8 +155,10 @@ page_builder:
       - cat.jpeg
       - drop.jpeg
       - lizard.jpeg
+      - moon.jpeg
+      - mountains.jpeg
     type: marquee
-    enabled: false
+    enabled: true
     marquee_title:
       -
         id: mb0fselj
@@ -718,7 +720,7 @@ page_builder:
     type: news
     enabled: true
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1747983982
+updated_at: 1747982966
 ---
 ## Welcome to your brand new Statamic site!
 

@@ -1,4 +1,22 @@
-# admin:
-#   title: Administrator
-#   permissions:
-#     - super
+editor:
+  title: Editor
+  permissions:
+    - 'access cp'
+    - 'configure form fields'
+    - 'view news entries'
+    - 'edit news entries'
+    - 'create news entries'
+    - 'delete news entries'
+    - 'view pages entries'
+    - 'edit pages entries'
+    - 'create pages entries'
+    - 'delete pages entries'
+    - 'view footer nav'
+    - 'edit footer nav'
+    - 'view main_nav nav'
+    - 'edit main_nav nav'
+    - 'edit company globals'
+    - 'view assets assets'
+    - 'upload assets assets'
+    - 'edit assets assets'
+    - 'view contact form submissions'
