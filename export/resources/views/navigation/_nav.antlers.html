@@ -1,27 +1,88 @@
-<nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" aria-label="menu" class="main">
-    <!-- Brand Logo -->
-    <a href="/" class="logo">
-        {{ partial:components/logo }}
-    </a>
-    <!-- Desktop Menu -->
-    <ul class="nav-items">
-        {{ nav:main_nav }}
+<nav
+    x-data="{ mobileMenuIsOpen: false }"
+    @click.away="mobileMenuIsOpen = false"
+    aria-label="menu"
+    class="main"
+>
+    <div class="content-area">
+        <!-- Brand Logo -->
+        <a href="/"> {{ partial:components/logo }} </a>
+        <!-- Desktop Menu -->
+        <ul class="nav-items">
+            {{ nav:main_nav }}
             <li><a href="{{ url }}">{{ title }}</a></li>
-        {{ /nav:main_nav }}
-    </ul>
-    <!-- Mobile Menu Button -->
-    <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" :class="mobileMenuIsOpen ? 'is-open' : null" type="button" class="mobile-menu" aria-label="mobile menu" aria-controls="mobileMenu">
-        <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-        <svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-    </button>
-    <!-- Mobile Menu -->
-    <ul x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="mobile-menu">
-        {{ nav:main_nav }}
+            {{ /nav:main_nav }}
+        </ul>
+
+        <a href="/#contact" class="btn btn-primary btn-desktop"> Contact Us </a>
+        <!-- Mobile Menu Button -->
+        <button
+            @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+            :aria-expanded="mobileMenuIsOpen"
+            :class="mobileMenuIsOpen ? 'is-open' : null"
+            type="button"
+            class="mobile-menu"
+            aria-label="mobile menu"
+            aria-controls="mobileMenu"
+        >
+            <svg
+                x-cloak
+                x-show="!mobileMenuIsOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="size-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+            </svg>
+            <svg
+                x-cloak
+                x-show="mobileMenuIsOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="size-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                />
+            </svg>
+        </button>
+
+        <!-- Mobile Menu -->
+        <ul
+            x-cloak
+            x-show="mobileMenuIsOpen"
+            x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
+            x-transition:enter-start="-translate-y-full"
+            x-transition:enter-end="translate-y-0"
+            x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
+            x-transition:leave-start="translate-y-0"
+            x-transition:leave-end="-translate-y-full"
+            id="mobileMenu"
+            class="mobile-menu"
+        >
+            {{ nav:main_nav }}
             <li class="py-4"><a href="{{ url }}">{{ title }}</a></li>
-        {{ /nav:main_nav }}
-    </ul>
+            {{ /nav:main_nav }}
+            <a
+                href="/#contact"
+                class="btn btn-primary mt-4 flex justify-center"
+            >
+                Contact Us
+            </a>
+        </ul>
+    </div>
 </nav>

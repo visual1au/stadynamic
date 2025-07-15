@@ -161,7 +161,20 @@ fields:
       if:
         show_controls: 'equals true'
   -
-    handle: button_colour
-    field: colour_picker.colour
-    config:
-      display: 'Button Colour'
+    handle: variant
+    field:
+      options:
+        -
+          key: primary
+          value: Primary
+        -
+          key: secondary
+          value: Secondary
+        -
+          key: tertiary
+          value: Tertiary
+        -
+          key: quaternary
+          value: Quaternary
+      type: select
+      display: Variant

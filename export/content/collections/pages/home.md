@@ -54,6 +54,15 @@ page_builder:
         text_colour: '#f700f4'
         type: title
         enabled: true
+    hero_buttons:
+      -
+        id: md3reug3
+        label: 'Contact Us'
+        link_type: url
+        target_blank: false
+        url: '/#contact'
+        button_type: button
+        variant: primary
   -
     id: m51xwmit
     gallery_title:
@@ -120,9 +129,10 @@ page_builder:
         link_type: url
         target_blank: true
         url: /
-        button_type: inline
+        button_type: button
         button_colour: '#00e6f5'
         button_opacity: 100
+        variant: primary
       -
         id: m51q6syw
         label: 'Get Started'
@@ -135,6 +145,7 @@ page_builder:
           **Lorem Ipsum**
 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit nec velit sit amet molestie. Donec aliquam enim sed tellus luctus lobortis. Sed at rhoncus magna. Maecenas scelerisque arcu ut congue fermentum. Curabitur quis nunc ac urna vehicula sagittis. Nam nec est leo. Sed ut lacus tempus, fermentum libero eu, pharetra neque. Nulla iaculis auctor augue, non interdum libero faucibus eu. Suspendisse id arcu id lectus lacinia molestie ut a nibh. Donec sed est eu dolor luctus cursus id id sapien. Nunc felis erat, efficitur non vehicula ut, auctor vel felis. Proin sollicitudin sagittis orci quis facilisis. Cras porttitor elit quis iaculis tristique. Sed tempus elit ante, nec consequat eros euismod non.
+        variant: tertiary
     type: banner
     enabled: true
     banner_colour: '#f700f4'
@@ -682,6 +693,7 @@ page_builder:
             url: /
             button_type: button
             button_colour: '#00e6f5'
+            variant: secondary
         type: column
         enabled: true
         column_width_mobile: 100
@@ -720,7 +732,7 @@ page_builder:
     type: news
     enabled: true
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1747982966
+updated_at: 1752540069
 ---
 ## Welcome to your brand new Statamic site!
 
