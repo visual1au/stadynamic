@@ -18,6 +18,10 @@ nav.main {
                 @apply underline-offset-2;
                 @apply hover:text-white focus:underline focus:outline-none;
             }
+
+            .sub-menu {
+                @apply absolute left-0 top-11 flex w-fit min-w-48 flex-col overflow-hidden border;
+            }
         }
 
         .btn-desktop {
@@ -33,7 +37,7 @@ nav.main {
         }
 
         ul.mobile-menu {
-            @apply fixed inset-x-0 top-0 z-10 flex max-h-svh flex-col divide-y divide-neutral-300 overflow-y-auto rounded-b-md bg-neutral-50 pb-6 pt-20 lg:hidden;
+            @apply fixed inset-x-0 top-0 z-10 flex max-h-svh flex-col divide-y divide-neutral-300 overflow-y-auto rounded-b-md bg-neutral-50 px-6 pb-6 pt-20 lg:hidden;
 
             li {
                 @apply py-4;

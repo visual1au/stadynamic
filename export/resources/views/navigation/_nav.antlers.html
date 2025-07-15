@@ -9,12 +9,58 @@
         <a href="/"> {{ partial:components/logo }} </a>
         <!-- Desktop Menu -->
         <ul class="nav-items">
-            {{ nav:main_nav }}
+            {{ nav:main_nav }} {{ if children }}
+            <div
+                x-data="{ isOpen: false, openedWithKeyboard: false }"
+                class="relative w-fit"
+                x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
+            >
+                <!-- Toggle Button -->
+                <li>
+                    <a
+                        class="cursor-pointer"
+                        x-on:click="isOpen = ! isOpen"
+                        x-on:keydown.space.prevent="openedWithKeyboard = true"
+                        x-on:keydown.enter.prevent="openedWithKeyboard = true"
+                        x-on:keydown.down.prevent="openedWithKeyboard = true"
+                        x-bind:aria-expanded="isOpen || openedWithKeyboard"
+                    >
+                        {{ title }}
+                        <i
+                            class="fa-regular fa-sm"
+                            :class="isOpen || openedWithKeyboard ? 'fa-chevron-up' : 'fa-chevron-down'"
+                        ></i>
+                    </a>
+                </li>
+
+                <!-- Sub Menu -->
+                <div
+                    x-cloak
+                    x-show="isOpen || openedWithKeyboard"
+                    x-transition
+                    x-trap="openedWithKeyboard"
+                    x-on:click.outside="isOpen = false, openedWithKeyboard = false"
+                    x-on:keydown.down.prevent="$focus.wrap().next()"
+                    x-on:keydown.up.prevent="$focus.wrap().previous()"
+                    class="sub-menu"
+                    role="menu"
+                >
+                    {{ children }}
+                    <a
+                        href="{{ url }}"
+                        class="bg-white px-4 py-2 text-sm text-black hover:text-secondary"
+                        role="menuitem"
+                        >{{ title }}</a
+                    >
+                    {{ /children }}
+                </div>
+            </div>
+            {{ else }}
             <li><a href="{{ url }}">{{ title }}</a></li>
-            {{ /nav:main_nav }}
+            {{ /if }} {{ /nav:main_nav }}
         </ul>
 
-        <a href="/#contact" class="btn btn-primary btn-desktop"> Contact Us </a>
+        <a href="/#contact" class="btn btn-primary btn-desktop">Contact Us</a>
         <!-- Mobile Menu Button -->
         <button
             @click="mobileMenuIsOpen = !mobileMenuIsOpen"
@@ -74,9 +120,19 @@
             id="mobileMenu"
             class="mobile-menu"
         >
-            {{ nav:main_nav }}
+            {{ nav:main_nav }} {{ if children }}
             <li class="py-4"><a href="{{ url }}">{{ title }}</a></li>
-            {{ /nav:main_nav }}
+            <ul>
+                {{ children }}
+                <li class="ml-6 space-x-2 py-0">
+                    <i class="fa-regular fa-chevron-right fa-sm"></i
+                    ><a href="{{ url }}">{{ title }}</a>
+                </li>
+                {{ /children }}
+            </ul>
+            {{ else }}
+            <li class="py-4"><a href="{{ url }}">{{ title }}</a></li>
+            {{ /if }} {{ /nav:main_nav }}
             <a
                 href="/#contact"
                 class="btn btn-primary mt-4 flex justify-center"
