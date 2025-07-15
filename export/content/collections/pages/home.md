@@ -732,7 +732,7 @@ page_builder:
     type: news
     enabled: true
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1752540069
+updated_at: 1752555529
 ---
 ## Welcome to your brand new Statamic site!
 

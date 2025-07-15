@@ -17,11 +17,6 @@ tabs:
                       display: Colour
                       fields:
                         -
-                          handle: label
-                          field:
-                            type: text
-                            display: Label
-                        -
                           handle: color
                           field:
                             type: color

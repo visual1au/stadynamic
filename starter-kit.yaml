@@ -1,5 +1,7 @@
 updatable: true
 export_paths:
+  - app/Console/Commands
+  - app/Listeners
   - app/Models/User.php
   - app/Providers/AppServiceProvider.php
   - app/Widgets
@@ -22,6 +24,7 @@ export_paths:
   - public/assets
   - package.json
   - README.md
+  - scripts
   - tailwind.config.js
   - tailwind.config.stataroid.js
   - vite.config.js
