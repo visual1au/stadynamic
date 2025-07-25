@@ -21,18 +21,26 @@ const outputFile = path.resolve(
 const yamlContent = fs.readFileSync(globalDataFile, "utf8");
 const themeSettings = yaml.load(yamlContent);
 
-// Extract colours
-const colourBlocks = themeSettings?.data?.colours || [];
+// Keys to extract
+const keys = [
+    "primary",
+    "secondary",
+    "tertiary",
+    "quaternary",
+    "white",
+    "lightGrey",
+    "darkGrey",
+    "black",
+];
 
-const hexColors = colourBlocks
-    .filter((entry) => entry?.enabled !== false && entry?.color)
-    .map((entry) => entry.color.trim())
-    .filter(Boolean);
+// Extract hex values
+const data = themeSettings?.data || {};
+const hexColors = keys.map((key) => data[key]?.trim()).filter(Boolean);
 
 // Write to JSON
 if (hexColors.length) {
     fs.writeFileSync(outputFile, JSON.stringify(hexColors, null, 2));
-    console.log(`✅ Extracted ${hexColors.length} theme colors`);
+    console.log(`Extracted ${hexColors.length} theme colors`);
 } else {
-    console.warn("⚠️ No colors found in theme_settings");
+    console.warn("No colors found in theme_settings");
 }

@@ -1,4 +1,28 @@
 /** @type {import('tailwindcss').Config} */
+import themeColors from "./resources/data/themeColours.json" assert { type: "json" };
+
+const [
+    primary,
+    secondary,
+    tertiary,
+    quaternary,
+    white,
+    lightGrey,
+    darkGrey,
+    black,
+] = themeColors;
+
+const colors = {
+    primary,
+    secondary,
+    tertiary,
+    quaternary,
+    white,
+    lightGrey,
+    darkGrey,
+    black,
+};
+
 export default {
     // The various configurable Tailwind configuration files.
     presets: [require("./tailwind.config.stataroid.js")],
@@ -13,10 +37,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#00e6f5",
-                secondary: "#f700f4",
-                tertiary: "#000",
-                quaternary: "#808080",
+                ...colors, // resources/data/themeColours.json
             },
             animation: {
                 "full-tl": "marquee-left 40s linear infinite",

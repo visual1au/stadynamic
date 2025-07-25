@@ -1,33 +1,10 @@
 title: 'Theme Settings'
 data:
-  colours:
-    -
-      id: m561eno4
-      label: Primary
-      color: '#00e6f5'
-      type: colour
-      enabled: true
-    -
-      id: m561f5rr
-      label: Secondary
-      color: '#f700f4'
-      type: colour
-      enabled: true
-    -
-      id: m5633lww
-      label: Tertiary
-      color: '#000000'
-      type: colour
-      enabled: true
-    -
-      id: m561g7zz
-      label: Quaternary
-      color: '#808080'
-      type: colour
-      enabled: true
-    -
-      id: m5648nkg
-      label: Default
-      color: '#ffffff'
-      type: colour
-      enabled: true
+  primary: '#325ced'
+  secondary: '#bccaef'
+  tertiary: '#eff4fe'
+  quaternary: '#f9f9f9'
+  white: '#ffffff'
+  lightGrey: '#c8c7cc'
+  darkGrey: '#666666'
+  black: '#000000'
