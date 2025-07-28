@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ site:short_locale }}">
     <head>
         <meta charset="utf-8" />
@@ -6,13 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{{ company:name }} - {{ title ?? site:name }}</title>
         <link rel="icon" href="{{ company:icon }}" type="image/x-icon" />
-        <script src="https://kit.fontawesome.com/c910993a50.js" crossorigin="anonymous"></script>
-        {{ partial:scripts/header_scripts }}
-        {{ vite src="resources/js/site.js|resources/css/site.scss" }}
+        <script
+            src="https://kit.fontawesome.com/c910993a50.js"
+            crossorigin="anonymous"
+        ></script>
+        {{ theme_settings:google_font }} {{ partial:scripts/header_scripts }} {{
+        vite src="resources/js/site.js|resources/css/site.scss" }}
     </head>
-    <body class="min-h-screen flex flex-col flex-grow">
-        {{ partial:scripts/start_of_page_scripts }}
-        {{ template_content }}
-        {{ partial:scripts/end_of_page_scripts }}
+    <body class="flex min-h-screen flex-grow flex-col">
+        {{ partial:scripts/start_of_page_scripts }} {{ template_content }} {{
+        partial:scripts/end_of_page_scripts }}
     </body>
 </html>

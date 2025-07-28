@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import themeColors from "./resources/data/themeColours.json" assert { type: "json" };
+import themeFont from "./resources/data/themeFont.json" assert { type: "json" };
 
 const [
     primary,
@@ -38,6 +39,9 @@ export default {
         extend: {
             colors: {
                 ...colors, // resources/data/themeColours.json
+            },
+            fontFamily: {
+                ...themeFont, // resources/data/themeFont.json
             },
             animation: {
                 "full-tl": "marquee-left 40s linear infinite",

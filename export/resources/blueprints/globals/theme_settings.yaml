@@ -2,6 +2,12 @@ tabs:
   main:
     display: Main
     sections:
+      - display: "Google Font"
+        fields:
+          - handle: google_font
+            field:
+              type: code
+              display: "Embed Code"
       - display: "Theme Colours"
         fields:
           - handle: primary

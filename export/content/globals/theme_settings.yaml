@@ -1,5 +1,11 @@
 title: 'Theme Settings'
 data:
+  google_font:
+    code: |-
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+    mode: htmlmixed
   primary: '#325ced'
   secondary: '#bccaef'
   tertiary: '#eff4fe'
