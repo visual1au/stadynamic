@@ -13,6 +13,14 @@ data:
         mode: htmlmixed
       type: social
       enabled: true
+      social_icon:
+        -
+          id: mdmlxozy
+          style: brands
+          brands: facebook
+          icon_colour: '#ffffff'
+          icon_hover_colour: '#eff4fe'
+          icon_size: 6
     -
       id: m508xay9
       label: Instagram
@@ -22,6 +30,14 @@ data:
         mode: htmlmixed
       type: social
       enabled: true
+      social_icon:
+        -
+          id: mdmly3te
+          style: brands
+          brands: instagram
+          icon_colour: '#ffffff'
+          icon_hover_colour: '#eff4fe'
+          icon_size: 6
     -
       id: m508y2vb
       label: LinkedIn
@@ -31,6 +47,14 @@ data:
         mode: htmlmixed
       type: social
       enabled: true
+      social_icon:
+        -
+          id: mdmoieyc
+          style: brands
+          brands: linkedin
+          icon_colour: '#ffffff'
+          icon_hover_colour: '#eff4fe'
+          icon_size: 6
   legal_links:
     -
       id: m50a039k

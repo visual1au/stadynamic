@@ -1,0 +1,8 @@
+<div
+    class="relative z-10 text-[{{ icon_colour }}] w-{{ icon_size }} h-{{ icon_size }} {{ if icon_hover_colour }} hover:text-[{{ icon_hover_colour }}] {{ /if }} transition-colors duration-300 ease-in-out delay-75 flex items-center justify-center"
+>
+    {{ if regular }} {{ regular }} {{ elseif solid }} {{ solid }} {{ elseif
+    light }} {{ light }} {{ elseif sharp_solid }} {{ sharp_solid }} {{ elseif
+    sharp_regular }} {{ sharp_regular }} {{ elseif sharp_light }} {{ sharp_light
+    }} {{ elseif brands }} {{ brands }} {{ endif }}
+</div>

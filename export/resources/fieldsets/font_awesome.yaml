@@ -1,0 +1,167 @@
+title: 'Font Awesome'
+fields:
+  -
+    handle: style
+    field:
+      options:
+        -
+          key: brands
+          value: Brands
+        -
+          key: solid
+          value: 'Classic Solid'
+        -
+          key: regular
+          value: 'Classic Regular'
+        -
+          key: light
+          value: 'Classic Light'
+        -
+          key: sharp_solid
+          value: 'Sharp Solid'
+        -
+          key: sharp_regular
+          value: 'Sharp Regular'
+        -
+          key: sharp_light
+          value: 'Sharp Light'
+      default: regular
+      type: select
+      display: Style
+      width: 50
+  -
+    handle: solid
+    field:
+      directory: resources/data/svg/icons/solid
+      type: icon
+      display: 'Classic Solid'
+      width: 50
+      if:
+        style: 'equals solid'
+  -
+    handle: regular
+    field:
+      directory: resources/data/svg/icons/regular
+      type: icon
+      display: 'Classic Regular'
+      width: 50
+      if:
+        style: 'equals regular'
+  -
+    handle: light
+    field:
+      directory: resources/data/svg/icons/light
+      type: icon
+      display: 'Classic Light'
+      width: 50
+      if:
+        style: 'equals light'
+  -
+    handle: sharp_solid
+    field:
+      directory: resources/data/svg/icons/sharp-solid
+      type: icon
+      display: 'Sharp Solid'
+      width: 50
+      if:
+        style: 'equals sharp_solid'
+  -
+    handle: sharp_regular
+    field:
+      directory: resources/data/svg/icons/sharp-regular
+      type: icon
+      display: 'Sharp Regular'
+      width: 50
+      if:
+        style: 'equals sharp_regular'
+  -
+    handle: sharp_light
+    field:
+      directory: resources/data/svg/icons/sharp-light
+      type: icon
+      display: 'Sharp Light'
+      width: 50
+      if:
+        style: 'equals sharp_light'
+  -
+    handle: brands
+    field:
+      directory: resources/data/svg/icons/brands
+      type: icon
+      display: Brands
+      width: 50
+      if:
+        style: 'equals brands'
+  -
+    handle: icon_colour
+    field: colour_picker.colour
+    config:
+      width: 50
+  -
+    handle: icon_hover_colour
+    field: colour_picker.colour
+    config:
+      display: 'Hover Colour'
+      width: 50
+  -
+    handle: icon_size
+    field:
+      options:
+        -
+          key: 1
+          value: null
+        -
+          key: 2
+          value: null
+        -
+          key: 3
+          value: null
+        -
+          key: 4
+          value: null
+        -
+          key: 5
+          value: null
+        -
+          key: 6
+          value: null
+        -
+          key: 7
+          value: null
+        -
+          key: 8
+          value: null
+        -
+          key: 9
+          value: null
+        -
+          key: 10
+          value: null
+        -
+          key: 11
+          value: null
+        -
+          key: 12
+          value: null
+        -
+          key: 14
+          value: null
+        -
+          key: 16
+          value: null
+        -
+          key: 20
+          value: null
+        -
+          key: 24
+          value: null
+        -
+          key: 28
+          value: null
+        -
+          key: 32
+          value: null
+      default: '12'
+      type: select
+      display: Size
+      width: 50

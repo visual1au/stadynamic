@@ -61,10 +61,8 @@ tabs:
                             type: link
                             display: Link
                         -
-                          handle: fontawesome_icon
-                          field:
-                            type: code
-                            display: 'Fontawesome Icon'
+                          import: icon
+                          prefix: social_
       -
         display: Legal
         fields:

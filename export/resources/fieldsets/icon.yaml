@@ -1,0 +1,13 @@
+title: Icon
+fields:
+  -
+    handle: icon
+    field:
+      mode: stacked
+      add_row: 'Add Icon'
+      type: grid
+      display: Icon
+      max_rows: 1
+      fields:
+        -
+          import: font_awesome

@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use Illuminate\Support\Str;
 use Statamic\Facades\Fieldset;
 use Statamic\Events\GlobalSetSaved;
 use Illuminate\Support\Facades\Artisan;
@@ -35,11 +36,9 @@ class ColorUpdateListener
     protected function updateColourPickerFieldset($themeSettings)
     {
         // Get the colors from the saved global set
-        $colours = $themeSettings->in('default')->data()['colours'] ?? [];
-
-        $swatches = collect($colours)
-            ->where('enabled', true)
-            ->pluck('color')
+        $swatches = collect($themeSettings->in('default')->data())
+            ->filter(fn ($value) => is_string($value) && Str::startsWith($value, '#'))
+            ->values()
             ->toArray();
 
         if (! empty($swatches)) {

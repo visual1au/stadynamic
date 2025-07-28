@@ -1,17 +1,15 @@
 <footer>
     <div class="container">
         <div class="wrapper-1">
-            <a href="/" class="logo">
-                {{ partial:components/logo }}
-            </a>
+            <a href="/" class="logo"> {{ partial:components/logo }} </a>
             <div class="links">
                 <div>
                     <h2>Resources</h2>
                     <ul>
                         {{ nav:footer }}
-                            <li>
-                                <a href="{{ url }}">{{ title }}</a>
-                            </li>
+                        <li>
+                            <a href="{{ url }}">{{ title }}</a>
+                        </li>
                         {{ /nav:footer }}
                     </ul>
                 </div>
@@ -19,9 +17,9 @@
                     <h2>Legal</h2>
                     <ul>
                         {{ company:legal_links }}
-                            <li>
-                                <a href="{{ entry:0 | url }}">{{ label }}</a>
-                            </li>
+                        <li>
+                            <a href="{{ entry:0 | url }}">{{ label }}</a>
+                        </li>
                         {{ /company:legal_links }}
                     </ul>
                 </div>
@@ -31,14 +29,16 @@
 
         <!-- Copyright -->
         <div class="wrapper-2">
-            <span class="copyright">&copy {{ now | format('Y') }} {{ company:name }}. All
-                Rights Reserved.
+            <span class="copyright"
+                >&copy {{ now | format('Y') }} {{ company:name }}. All Rights
+                Reserved.
             </span>
             <div class="social-links">
                 {{ company:social_links }}
-                    <a href="{{ link }}">
-                        {{ fontawesome_icon }}
-                    </a>
+                <a href="{{ link }}">
+                    {{ social_icon }} {{ partial:components/icon }} {{
+                    /social_icon }}
+                </a>
                 {{ /company:social_links }}
             </div>
         </div>
