@@ -1,54 +1,48 @@
-{{# @name Marquee @desc The hero page builder block. @set page.page_builder.marquee #}}
-<!-- /page_builder/_marqyee.antlers.html -->
 {{ partial:page_builder/block }}
-    <section id="{{ block:slug }}">
-        <div class="content-area">
-            <div class="inner-padding">
-                <div class="mb-10 text-center md:text-start">
-                    {{ marquee_title }}
-                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
-                            {{ title }}
-                        </{{ heading }}>
-                    {{ /marquee_title }}
-                </div>
+<div class="mb-10 text-center md:text-start">
+    {{ marquee_title }} {{ partial:components/header }} {{ /marquee_title }}
+</div>
 
-                <!-- Marquee -->
-                <div x-data="{
-                    // Marquee options
-                    pauseOnHover: true,
+<!-- Marquee -->
+<div
+    x-data="{
+    // Marquee options
+    pauseOnHover: true,
 
-                    // Initialization
-                    init() {
-                        // Clone the Marquee list and append it to the marquee track (we need 2 full width tracks for the Marquee animation to work correctly)
-                        this.$nextTick(() => {
-                        this.$refs.marqueeTrack.appendChild(this.$refs.marqueeList.cloneNode(true));
-                        });
-                    }
-                    }" class="marquee">
-                    <!-- Marquee overlay gradients -->
-                    <div class="gradient-overlay-left" aria-hidden="true"></div>
-                    <div class="gradient-overlay-right" aria-hidden="true"></div>
-                    <!-- END Marquee overlay gradients -->
+    // Initialization
+    init() {
+        // Clone the Marquee list and append it to the marquee track (we need 2 full width tracks for the Marquee animation to work correctly)
+        this.$nextTick(() => {
+        this.$refs.marqueeTrack.appendChild(this.$refs.marqueeList.cloneNode(true));
+        });
+    }
+    }"
+    class="marquee"
+>
+    <!-- Marquee overlay gradients -->
+    <div class="gradient-overlay-left" aria-hidden="true"></div>
+    <div class="gradient-overlay-right" aria-hidden="true"></div>
+    <!-- END Marquee overlay gradients -->
 
-                    <!-- Marquee Track -->
-                    <div x-ref="marqueeTrack" class="marquee-track" x-bind:class="{ 'hover:[animation-play-state:paused]': pauseOnHover }">
-                        <!-- Marquee list -->
-                        <div x-ref="marqueeList" class="marquee-list">
-                            <!-- Marquee Items -->
-                            {{ logos }}
-                                <div class="logo-wrapper">
-                                    <img src="{{ url }}" class="logo" />
-                                </div>
-                            {{ /logos }}
-                            <!-- END Marquee Items -->
-                        </div>
-                        <!-- END Marquee List -->
-                    </div>
-                    <!-- END Marquee Track -->
-                </div>
-                <!-- END Marquee -->
+    <!-- Marquee Track -->
+    <div
+        x-ref="marqueeTrack"
+        class="marquee-track"
+        x-bind:class="{ 'hover:[animation-play-state:paused]': pauseOnHover }"
+    >
+        <!-- Marquee list -->
+        <div x-ref="marqueeList" class="marquee-list">
+            <!-- Marquee Items -->
+            {{ logos }}
+            <div class="logo-wrapper">
+                <img src="{{ url }}" class="logo" />
             </div>
+            {{ /logos }}
+            <!-- END Marquee Items -->
         </div>
-    </section>
+        <!-- END Marquee List -->
+    </div>
+    <!-- END Marquee Track -->
+</div>
+<!-- END Marquee -->
 {{ /partial:page_builder/block }}
-<!-- End: /page_builder/_marquee.antlers.html -->

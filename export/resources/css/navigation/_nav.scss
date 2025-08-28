@@ -14,7 +14,7 @@ nav.main {
 
             li {
                 @apply font-medium;
-                @apply text-neutral-300;
+                @apply text-white;
                 @apply underline-offset-2;
                 @apply hover:text-white focus:underline focus:outline-none;
             }
@@ -29,7 +29,7 @@ nav.main {
         }
 
         button.mobile-menu {
-            @apply flex text-neutral-600 lg:hidden;
+            @apply flex text-black lg:hidden;
 
             &.is-open {
                 @apply fixed right-6 top-6 z-20;
@@ -40,10 +40,10 @@ nav.main {
             @apply fixed inset-x-0 top-0 z-10 flex max-h-svh flex-col divide-y divide-neutral-300 overflow-y-auto rounded-b-md bg-neutral-50 px-6 pb-6 pt-20 lg:hidden;
 
             li {
-                @apply py-4;
+                @apply py-4 text-black;
 
                 a {
-                    @apply w-full text-lg font-medium text-neutral-600 focus:underline;
+                    @apply w-full text-lg font-medium focus:underline;
                 }
             }
         }

@@ -2,7 +2,7 @@ title: Carousel
 fields:
   -
     import: colour_picker
-    prefix: carousel_bg_
+    prefix: bg_
   -
     handle: slug
     field:
@@ -35,4 +35,3 @@ fields:
                   prefix: carousel_item_
                 -
                   import: markdown_content
-                  prefix: carousel_item_

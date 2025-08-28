@@ -10,7 +10,7 @@ fields:
     prefix: news_
   -
     import: colour_picker
-    prefix: news_bg_
+    prefix: bg_
   -
     handle: limit
     field:

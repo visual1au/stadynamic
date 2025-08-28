@@ -2,7 +2,7 @@ title: FAQ
 fields:
   -
     import: colour_picker
-    prefix: faq_bg_
+    prefix: bg_
   -
     handle: slug
     field:
@@ -35,7 +35,6 @@ fields:
     prefix: faq_
   -
     import: markdown_content
-    prefix: faq_
   -
     handle: image
     field:

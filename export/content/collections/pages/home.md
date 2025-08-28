@@ -40,20 +40,24 @@ page_builder:
         heading: h3
         type: title
         enabled: true
+        text_alignment: center
+        font_weight: bold
       -
         id: m51pc0sp
         title: CREATIVE
         heading: h1
-        text_colour: '#00e6f5'
         type: title
         enabled: true
+        text_alignment: center
+        font_weight: bold
       -
         id: m51pc893
         title: 'Digital Agency'
         heading: h2
-        text_colour: '#f700f4'
         type: title
         enabled: true
+        text_alignment: center
+        font_weight: bold
     hero_buttons:
       -
         id: md3reug3
@@ -73,6 +77,8 @@ page_builder:
         text_colour: '#f700f4'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
       -
         id: m51y4oth
         title: 'Here are some random images'
@@ -80,6 +86,8 @@ page_builder:
         text_colour: '#808080'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     gallery_type: default_grid
     cols_sm: '1'
     cols_md: '2'
@@ -106,10 +114,13 @@ page_builder:
     gallery_opacity: 10
     slug: gallery
     gallery_bg_colour: '#00e6f5'
-    gallery_bg_opacity: 20
+    gallery_bg_opacity: '100'
     gallery_bg_gradient: true
     gallery_bg_secondary: '#00e6f5'
     gallery_bg_secondary_colour: '#f700f4'
+    '{{ id }}_bg_opacity': 0
+    bg_gradient: false
+    bg_opacity: 100
   -
     id: m51q5k5e
     banner_title:
@@ -119,7 +130,12 @@ page_builder:
         heading: h2
         type: title
         enabled: true
-    banner_content: 'Curabitur nec lobortis odio. Nulla mi elit, eleifend vel molestie imperdiet, malesuada in metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eget leo risus. Phasellus ultricies dui dui, interdum bibendum felis accumsan et. Fusce mattis ultricies lacus, in porttitor sem.'
+        text_alignment: left
+        font_weight: bold
+    banner_content: |-
+      **Curabitur** nec lobortis odio. Nulla mi elit, eleifend vel molestie imperdiet, malesuada in metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eget leo risus. Phasellus ultricies dui dui, interdum bibendum felis accumsan et. Fusce mattis ultricies lacus, in [porttitor sem](/).
+      - this
+      - that
     banner_text_colour: '#808080'
     background_image: tom.png
     banner_buttons:
@@ -148,17 +164,23 @@ page_builder:
         variant: tertiary
     type: banner
     enabled: true
-    banner_colour: '#f700f4'
+    banner_colour: '#325ced'
     banner_opacity: 20
     banner_bgcolour: '#f700f4'
     banner_bgopacity: 100
     slug: banner
-    banner_bg_colour: '#f700f4'
+    banner_bg_colour: '#325ced'
     banner_bg_gradient: false
     banner_bg_secondary: '#ffffff'
     banner_gradient: false
     banner_secondary: '#ffffff'
     banner_bg_opacity: 20
+    bg_opacity: 0
+    bg_gradient: false
+    banner_image: tom.png
+    banner_text_alignment: right
+    text_alignment: left
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium suscipit fringilla. Etiam lobortis, tellus in auctor egestas, urna eros ornare libero, nec maximus est lectus vitae augue. Vivamus vel mauris in nulla luctus fermentum a non metus. Mauris aliquam lacus eu augue vulputate blandit. Suspendisse elementum tempor purus, et elementum lacus venenatis id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi.'
   -
     id: mb0bioec
     logos:
@@ -178,6 +200,8 @@ page_builder:
         text_colour: '#000000'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     slug: trusted-partners
   -
     id: m4w4h0qk
@@ -199,15 +223,19 @@ page_builder:
             id: m50mssvt
             title: 'Lorem Ipsum'
             heading: h3
-            text_colour: '#f700f4'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         type: carousel_item
         enabled: true
         carousel_item_bg_colour: '#00e6f5'
         carousel_item_bg_opacity: 40
         carousel_item_bg_gradient: false
         carousel_item_bg_secondary: '#ffffff'
+        carousel_item_text_alignment: left
+        text_alignment: left
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sem nunc, mollis sit amet arcu quis, malesuada lobortis nulla. Ut maximus dui eu metus mollis gravida. Pellentesque eget ultrices est, ut vehicula nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
       -
         id: m50njn0w
         colour: '#00e6f5'
@@ -219,14 +247,18 @@ page_builder:
             id: m50mssvt
             title: 'Lorem Ipsum'
             heading: h3
-            text_colour: '#f700f4'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         type: carousel_item
         enabled: true
         carousel_item_bg_colour: '#ffffff'
         carousel_item_bg_gradient: false
         carousel_item_bg_secondary: '#ffffff'
+        carousel_item_text_alignment: left
+        text_alignment: left
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sem nunc, mollis sit amet arcu quis, malesuada lobortis nulla. Ut maximus dui eu metus mollis gravida. Pellentesque eget ultrices est, ut vehicula nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
         carousel_item_bg_opacity: 0
       -
         id: m50njls0
@@ -239,14 +271,18 @@ page_builder:
             id: m50mssvt
             title: 'Lorem Ipsum'
             heading: h3
-            text_colour: '#f700f4'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         type: carousel_item
         enabled: true
         carousel_item_bg_colour: '#ffffff'
         carousel_item_bg_gradient: false
         carousel_item_bg_secondary: '#ffffff'
+        carousel_item_text_alignment: left
+        text_alignment: left
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sem nunc, mollis sit amet arcu quis, malesuada lobortis nulla. Ut maximus dui eu metus mollis gravida. Pellentesque eget ultrices est, ut vehicula nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
         carousel_item_bg_opacity: 0
       -
         id: m50njkl4
@@ -259,14 +295,18 @@ page_builder:
             id: m50mssvt
             title: 'Lorem Ipsum'
             heading: h3
-            text_colour: '#f700f4'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         type: carousel_item
         enabled: true
         carousel_item_bg_colour: '#ffffff'
         carousel_item_bg_gradient: false
         carousel_item_bg_secondary: '#ffffff'
+        carousel_item_text_alignment: left
+        text_alignment: left
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sem nunc, mollis sit amet arcu quis, malesuada lobortis nulla. Ut maximus dui eu metus mollis gravida. Pellentesque eget ultrices est, ut vehicula nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
         carousel_item_bg_opacity: 0
     carousel_title:
       -
@@ -276,6 +316,8 @@ page_builder:
         text_colour: '#f700f4'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
       -
         id: m50mwlyb
         title: "Here's a subtitle"
@@ -283,15 +325,21 @@ page_builder:
         text_colour: '#808080'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     carousel_cols_sm: 1
     carousel_cols_md: '2'
     carousel_cols_lg: 3
     opacity: 0
-    carousel_bg_colour: '#00e6f5'
-    carousel_bg_opacity: 20
+    carousel_bg_colour: '#325ced'
+    carousel_bg_opacity: '100'
     carousel_bg_gradient: true
     carousel_bg_secondary: '#ffffff'
-    carousel_bg_secondary_colour: '#f700f4'
+    carousel_bg_secondary_colour: '#bccaef'
+    bg_opacity: 50
+    bg_gradient: true
+    bg_colour: '#325ced'
+    bg_secondary_colour: '#bccaef'
   -
     id: m4uxc0vv
     faq_items:
@@ -325,6 +373,8 @@ page_builder:
         text_colour: '#000000'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
       -
         id: m50ne1nt
         title: 'Here are some frequently asked questions'
@@ -332,6 +382,8 @@ page_builder:
         text_colour: '#808080'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: normal
     opacity: 0
     faq_bg_colour: '#f700f4'
     faq_bg_opacity: 20
@@ -339,19 +391,14 @@ page_builder:
     width: 50
     faq_text_colour: '#808080'
     faq_content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at suscipit felis. Mauris pharetra erat vitae turpis tincidunt, a porta neque molestie.'
-    faq_buttons:
-      -
-        id: m5fxns3s
-        label: 'Contact Us'
-        link_type: url
-        target_blank: false
-        url: '/#contact-us'
-        button_type: button
-        button_colour: '#f700f4'
     slug: faq
     faq_bg_gradient: true
     faq_bg_secondary: '#ffffff'
     faq_bg_secondary_colour: '#00e6f5'
+    bg_gradient: false
+    bg_opacity: 100
+    faq_text_alignment: left
+    text_alignment: left
   -
     id: m4urcmgw
     title: Test
@@ -367,6 +414,8 @@ page_builder:
         text_colour: '#000000'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
       -
         id: m50nigme
         title: 'Get in touch!'
@@ -374,18 +423,24 @@ page_builder:
         text_colour: '#808080'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     opacity: 20
     colour: '#00e6f5'
     slug: contact
-    form_bg_colour: '#00e6f5'
+    form_bg_colour: '#bccaef'
     form_bg_opacity: 20
     layout: row
     width: 33
     form_content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at suscipit felis. Mauris pharetra erat vitae turpis tincidunt, a porta neque molestie.'
     form_text_colour: '#808080'
-    form_bg_gradient: true
+    form_bg_gradient: false
     form_bg_secondary: '#ffffff'
-    form_bg_secondary_colour: '#f700f4'
+    bg_gradient: false
+    bg_opacity: 100
+    form_text_alignment: left
+    text_alignment: left
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at suscipit felis. Mauris pharetra erat vitae turpis tincidunt, a porta neque molestie.'
   -
     id: m4uzbnn3
     title: 'Hey this is cool'
@@ -394,7 +449,7 @@ page_builder:
       -
         id: m4uzwsty
         title: test
-        content: tests
+        content: 'Suspendisse vehicula sodales condimentum. Vestibulum eu tincidunt tortor, at iaculis nibh. Fusce convallis eros nec maximus bibendum. Morbi non commodo metus. Duis at augue risus. Phasellus congue mollis metus. Etiam luctus velit ipsum, vitae blandit magna pharetra et. Etiam laoreet sagittis felis. Nullam nec sollicitudin orci.'
         image: tom.png
         type: panel
         enabled: true
@@ -407,11 +462,15 @@ page_builder:
             text_colour: '#000000'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         panel_item_content: 'Suspendisse vehicula sodales condimentum. Vestibulum eu tincidunt tortor, at iaculis nibh. Fusce convallis eros nec maximus bibendum. Morbi non commodo metus. Duis at augue risus. Phasellus congue mollis metus. Etiam luctus velit ipsum, vitae blandit magna pharetra et. Etiam laoreet sagittis felis. Nullam nec sollicitudin orci.'
+        panel_item_text_alignment: left
+        text_alignment: left
       -
         id: m50o89lc
         title: test
-        content: tests
+        content: 'Suspendisse vehicula sodales condimentum. Vestibulum eu tincidunt tortor, at iaculis nibh. Fusce convallis eros nec maximus bibendum. Morbi non commodo metus. Duis at augue risus. Phasellus congue mollis metus. Etiam luctus velit ipsum, vitae blandit magna pharetra et. Etiam laoreet sagittis felis. Nullam nec sollicitudin orci.'
         image: tom.png
         type: panel
         enabled: true
@@ -424,7 +483,11 @@ page_builder:
             text_colour: '#000000'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         panel_item_content: 'Suspendisse vehicula sodales condimentum. Vestibulum eu tincidunt tortor, at iaculis nibh. Fusce convallis eros nec maximus bibendum. Morbi non commodo metus. Duis at augue risus. Phasellus congue mollis metus. Etiam luctus velit ipsum, vitae blandit magna pharetra et. Etiam laoreet sagittis felis. Nullam nec sollicitudin orci.'
+        panel_item_text_alignment: left
+        text_alignment: left
     type: panels
     enabled: true
     text: Yoyoyoooooo
@@ -438,12 +501,15 @@ page_builder:
         text_colour: '#000000'
         type: title
         enabled: true
-    panels_bg_colour: '#f700f4'
+        text_alignment: left
+        font_weight: bold
+    panels_bg_colour: '#325ced'
     panels_bg_opacity: 20
-    panels_bg_gradient: true
+    panels_bg_gradient: false
     panels_bg_secondary: '#ffffff'
-    panels_bg_secondary_colour: '#00e6f5'
     slug: panels
+    bg_opacity: 0
+    bg_gradient: false
   -
     id: m522ct6k
     cards_title:
@@ -454,6 +520,8 @@ page_builder:
         text_colour: '#f700f4'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     cards:
       -
         id: m522daa0
@@ -467,6 +535,8 @@ page_builder:
             text_colour: '#000000'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         card_content: |-
           Phasellus ut porta risus. Morbi facilisis tincidunt tortor, convallis consequat justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse non fringilla nulla.
 
@@ -496,6 +566,8 @@ page_builder:
             text_colour: '#000000'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         card_content: 'Phasellus ut porta risus. Morbi facilisis tincidunt tortor, convallis consequat justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse non fringilla nulla.'
         card_text_colour: '#808080'
         type: card
@@ -521,6 +593,8 @@ page_builder:
             text_colour: '#000000'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         card_content: 'Phasellus ut porta risus. Morbi facilisis tincidunt tortor, convallis consequat justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse non fringilla nulla.'
         card_text_colour: '#808080'
         type: card
@@ -546,6 +620,8 @@ page_builder:
             text_colour: '#000000'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         card_content: 'Phasellus ut porta risus. Morbi facilisis tincidunt tortor, convallis consequat justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse non fringilla nulla.'
         card_text_colour: '#808080'
         type: card
@@ -569,11 +645,12 @@ page_builder:
     cards_cols_sm: '1'
     cards_cols_md: '2'
     cards_cols_lg: 4
-    cards_bg_colour: '#00e6f5'
-    cards_bg_opacity: 20
-    cards_bg_gradient: true
+    cards_bg_opacity: '100'
+    cards_bg_gradient: false
     cards_bg_secondary: '#ffffff'
-    cards_bg_secondary_colour: '#f700f4'
+    bg_opacity: 0
+    bg_gradient: false
+    cards_bg_colour: '#325ced'
   -
     id: m68igs3j
     steps_bg_colour: '#f700f4'
@@ -623,7 +700,11 @@ page_builder:
         text_colour: '#ffffff'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     spacer_image: right-arrow.svg
+    bg_gradient: false
+    bg_opacity: 100
   -
     id: m5ol9hf7
     slug: columns
@@ -638,6 +719,8 @@ page_builder:
         text_colour: '#000000'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     columns_content: 'Cras at risus metus. Integer venenatis blandit purus eu maximus. Sed magna erat, accumsan quis commodo sed, finibus a purus. Integer arcu tellus, luctus sed sem nec, auctor mollis lorem. Aenean sed laoreet nisi. Donec efficitur feugiat magna posuere mollis. Nam sodales, mi nec condimentum vulputate, diam nunc imperdiet massa, eget bibendum arcu velit vel eros.'
     columns_text_colour: '#000000'
     type: columns
@@ -658,6 +741,8 @@ page_builder:
             text_colour: '#f700f4'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         column_content: 'Cras at risus metus. Integer venenatis blandit purus eu maximus. Sed magna erat, accumsan quis commodo sed, finibus a purus. Integer arcu tellus, luctus sed sem nec, auctor mollis lorem. Aenean sed laoreet nisi. Donec efficitur feugiat magna posuere mollis. Nam sodales, mi nec condimentum vulputate, diam nunc imperdiet massa, eget bibendum arcu velit vel eros.'
         column_text_colour: '#000000'
         type: column
@@ -669,6 +754,7 @@ page_builder:
         column_opacity: 0
         image: tom.png
         select_content_type: image_video
+        column_text_alignment: left
       -
         id: m5ole3t5
         column_gradient: false
@@ -682,6 +768,8 @@ page_builder:
             text_colour: '#00e6f5'
             type: title
             enabled: true
+            text_alignment: left
+            font_weight: bold
         column_text_colour: '#000000'
         image: tom.png
         column_buttons:
@@ -693,7 +781,7 @@ page_builder:
             url: /
             button_type: button
             button_colour: '#00e6f5'
-            variant: secondary
+            variant: primary
         type: column
         enabled: true
         column_width_mobile: 100
@@ -701,18 +789,12 @@ page_builder:
         column_width_desktop: 50
         select_content_type: image_video
         file: tom.png
-  -
-    id: m7y79ao8
-    modal_type: form
-    type: engagement_modal
-    enabled: false
-    form: contact
-    engagement_modal_bg_colour: '#00e6f5'
-    engagement_modal_bg_gradient: true
-    engagement_modal_bg_secondary_colour: '#f700f4'
-    engagement_modal_bg_opacity: 20
-    seconds_to_display: 5
-    expiry_date: '2025-03-08'
+        column_text_alignment: left
+    bg_gradient: false
+    bg_opacity: 100
+    columns_text_alignment: left
+    text_alignment: left
+    content: 'Cras at risus metus. Integer venenatis blandit purus eu maximus. Sed magna erat, accumsan quis commodo sed, finibus a purus. Integer arcu tellus, luctus sed sem nec, auctor mollis lorem. Aenean sed laoreet nisi. Donec efficitur feugiat magna posuere mollis. Nam sodales, mi nec condimentum vulputate, diam nunc imperdiet massa, eget bibendum arcu velit vel eros.'
   -
     id: m82ihfic
     slug: news
@@ -724,6 +806,8 @@ page_builder:
         text_colour: '#000000'
         type: title
         enabled: true
+        text_alignment: left
+        font_weight: bold
     news_bg_colour: '#00e6f5'
     news_bg_gradient: true
     news_bg_secondary_colour: '#f700f4'
@@ -731,8 +815,20 @@ page_builder:
     limit: 3
     type: news
     enabled: true
+    bg_gradient: false
+    bg_opacity: 100
+  -
+    id: m7y79ao8
+    modal_type: form
+    type: engagement_modal
+    enabled: false
+    form: contact
+    engagement_modal_bg_gradient: false
+    engagement_modal_bg_opacity: 20
+    seconds_to_display: 5
+    expiry_date: '2025-03-08'
 updated_by: 09206c24-2552-4b9b-bbbc-a54640dd3e13
-updated_at: 1752555529
+updated_at: 1755496221
 ---
 ## Welcome to your brand new Statamic site!
 

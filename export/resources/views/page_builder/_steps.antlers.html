@@ -1,76 +1,53 @@
-{{ partial:page_builder/block }}
-    <section id="{{ block:slug }}" class="steps
-        {{ switch(
-            (steps_bg_gradient == true) => 'bg-gradient-to-r from-[{{ steps_bg_colour }}]/{{ steps_bg_opacity }} to-[{{ steps_bg_secondary_colour }}]/{{ steps_bg_opacity }} ',
-            (steps_bg_gradient == false) => 'bg-[{{ steps_bg_colour }}] bg-opacity-{{ steps_bg_opacity }}'
-            ) }}
-        {{ if step_bg_image }}
-            {{ if step_bg_size & step_bg_size != 'custom' }}{{ step_bg_size }}{{ /if }}
-            {{ if step_bg_repeat }}{{ step_bg_repeat }}{{ /if }}
-            {{ if step_bg_position & step_bg_position != 'custom' }}{{ step_bg_position }}{{ /if }}
-        {{ /if }}>
-    " {{ if step_bg_image }}
-             style="
-        background-image: url('{{ step_bg_image }}');
-        {{ if step_bg_size & step_bg_size == 'custom' & step_bg_custom_size }}background-size: {{ step_bg_custom_size }};{{ /if }}
-        {{ if step_bg_position & step_bg_position == 'custom' & step_bg_custom_position }}background-position: {{ step_bg_custom_position }};{{ /if }}
-    "
-
-      {{ /if }}>
-        <div class="content-area">
-            <div class="inner-padding">
-                <div class="mb-10 text-center md:text-start">
-                    {{ steps_title }}
-                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
-                            {{ title }}
-                        </{{ heading }}>
-                    {{ /steps_title }}
-                </div>
-                <div class="steps-grid grid grid-cols-1 gap-4
-                {{ switch(
-                    (steps_cols_sm == '1') => 'sm:grid-cols-1',
-                    (steps_cols_sm == '2') => 'sm:grid-cols-2',
-                    (steps_cols_sm == '3') => 'sm:grid-cols-3',
-                    (steps_cols_sm == '4') => 'sm:grid-cols-4',
-                    (steps_cols_sm == '5') => 'sm:grid-cols-5',
-                    (steps_cols_sm == '6') => 'sm:grid-cols-6') }}
-                {{ switch(
-                    (steps_cols_md == '1') => 'md:grid-cols-1',
-                    (steps_cols_md == '2') => 'md:grid-cols-2',
-                    (steps_cols_md == '3') => 'md:grid-cols-3',
-                    (steps_cols_md == '4') => 'md:grid-cols-4',
-                    (steps_cols_md == '5') => 'md:grid-cols-5',
-                    (steps_cols_md == '6') => 'md:grid-cols-6') }}
-                {{ switch(
-                    (steps_cols_lg == '1') => 'lg:grid-cols-1',
-                    (steps_cols_lg == '2') => 'lg:grid-cols-2',
-                    (steps_cols_lg == '3') => 'lg:grid-cols-3',
-                    (steps_cols_lg == '4') => 'lg:grid-cols-4',
-                    (steps_cols_lg == '5') => 'lg:grid-cols-5',
-                    (steps_cols_lg == '6') => 'lg:grid-cols-6') }}
-                ">
-                    {{ steps }}
-                        <div class="step-wrapper">
-                            <div class="step-outer">
-                                <div class="step-inner">
-                                    <img src="{{ if icon }}{{ icon }}{{ else }}data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4={{ /if }}" alt="icon">
-                                    {{ if heading }}
-                                        <h6>{{ heading }}</h6>
-                                    {{ /if }}
-                                    <div class="step-text">
-                                        {{ content }}
-                                    </div>
-                                </div>
-                            </div>
-                            {{ if not last }}
-                            <div class="spacer-wrapper">
-                                {{ if spacer_image }}<img src="{{ spacer_image }}" alt="spacer">{{ /if }}
-                            </div>
-                            {{ /if }}
-                        </div>
-                    {{ /steps }}
-                </div>
+{{ partial:page_builder/block class="steps"}}
+<div class="mb-10 text-center md:text-start">
+    {{ steps_title }} {{ partial:components/header }} {{ /steps_title }}
+</div>
+<div
+    class="steps-grid grid grid-cols-1 gap-4
+{{ switch(
+    (steps_cols_sm == '1') => 'sm:grid-cols-1',
+    (steps_cols_sm == '2') => 'sm:grid-cols-2',
+    (steps_cols_sm == '3') => 'sm:grid-cols-3',
+    (steps_cols_sm == '4') => 'sm:grid-cols-4',
+    (steps_cols_sm == '5') => 'sm:grid-cols-5',
+    (steps_cols_sm == '6') => 'sm:grid-cols-6') }}
+{{ switch(
+    (steps_cols_md == '1') => 'md:grid-cols-1',
+    (steps_cols_md == '2') => 'md:grid-cols-2',
+    (steps_cols_md == '3') => 'md:grid-cols-3',
+    (steps_cols_md == '4') => 'md:grid-cols-4',
+    (steps_cols_md == '5') => 'md:grid-cols-5',
+    (steps_cols_md == '6') => 'md:grid-cols-6') }}
+{{ switch(
+    (steps_cols_lg == '1') => 'lg:grid-cols-1',
+    (steps_cols_lg == '2') => 'lg:grid-cols-2',
+    (steps_cols_lg == '3') => 'lg:grid-cols-3',
+    (steps_cols_lg == '4') => 'lg:grid-cols-4',
+    (steps_cols_lg == '5') => 'lg:grid-cols-5',
+    (steps_cols_lg == '6') => 'lg:grid-cols-6') }}
+"
+>
+    {{ steps }}
+    <div class="step-wrapper">
+        <div class="step-outer">
+            <div class="step-inner">
+                <img
+                    src="{{ if icon }}{{ icon }}{{ else }}data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4={{ /if }}"
+                    alt="icon"
+                />
+                {{ if heading }}
+                <h6>{{ heading }}</h6>
+                {{ /if }}
+                <div class="step-text">{{ content }}</div>
             </div>
         </div>
-    </section>
+        {{ if not last }}
+        <div class="spacer-wrapper">
+            {{ if spacer_image }}<img src="{{ spacer_image }}" alt="spacer" />{{
+            /if }}
+        </div>
+        {{ /if }}
+    </div>
+    {{ /steps }}
+</div>
 {{ /partial:page_builder/block }}

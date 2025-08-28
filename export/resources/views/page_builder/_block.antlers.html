@@ -1,1 +1,14 @@
-{{ slot }}
+<section
+    {{ if block:slug }} id="{{ block:slug }}" {{ /if }}
+    {{ if background_image }} style="background-image: url('{{ background_image }}');" {{ /if }}
+    class="{{ class }}
+        {{ switch(
+    (bg_gradient == true) => 'bg-gradient-to-r from-[{{ bg_colour }}]/{{ bg_opacity }} to-[{{ bg_secondary_colour }}]/{{ bg_opacity }} ',
+    (bg_gradient == false) => 'bg-[{{ bg_colour }}] bg-opacity-{{ bg_opacity }}'
+    ) }}
+     "
+>
+    <div class="content-area">
+        <div class="inner-padding">{{ slot }}</div>
+    </div>
+</section>

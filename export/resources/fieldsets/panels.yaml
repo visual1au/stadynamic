@@ -2,7 +2,7 @@ title: 'Alternating Panels'
 fields:
   -
     import: colour_picker
-    prefix: panels_bg_
+    prefix: bg_
   -
     handle: slug
     field:
@@ -29,7 +29,6 @@ fields:
                   prefix: panel_item_
                 -
                   import: markdown_content
-                  prefix: panel_item_
                 -
                   handle: image
                   field:

@@ -7,13 +7,12 @@ fields:
       display: Slug
   -
     import: colour_picker
-    prefix: columns_bg_
+    prefix: bg_
   -
     import: header
     prefix: columns_
   -
     import: markdown_content
-    prefix: columns_
   -
     handle: columns
     field:

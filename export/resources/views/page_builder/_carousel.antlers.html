@@ -1,53 +1,36 @@
-{{# @name Carousel @desc The carousel page builder block. @set page.page_builder.carousel #}}
-<!-- /page_builder/_carousel.antlers.html -->
-{{ partial:page_builder/block }}
-    <section id="{{ block:slug }}" class="carousel
-        {{ switch(
-    (carousel_bg_gradient == true) => 'bg-gradient-to-r from-[{{ carousel_bg_colour }}]/{{ carousel_bg_opacity }} to-[{{ carousel_bg_secondary_colour }}]/{{ carousel_bg_opacity }} ',
-    (carousel_bg_gradient == false) => 'bg-[{{ carousel_bg_colour }}] bg-opacity-{{ carousel_bg_opacity }}'
-    ) }}
-    ">
-        <div class="content-area">
-            <div class="inner-padding">
-                <div class="mb-10 text-center md:text-start">
-                    {{ carousel_title }}
-                        <{{ heading }} class="mb-4 text-[{{ text_colour }}]">
-                            {{ title }}
-                        </{{ heading }}>
-                    {{ /carousel_title }}
-                </div>
-                <div class="swiper" data-cols-sm="{{ block:carousel_cols_sm }}" data-cols-md="{{ block:carousel_cols_md }}" data-cols-lg="{{ block:carousel_cols_lg }}">
-                    <div class="swiper-wrapper">
-                        {{ carousel }}
-                            <div class="swiper-slide
-                                {{ switch(
-                                    (carousel_item_bg_gradient == true) => 'bg-gradient-to-r from-[{{ carousel_item_bg_colour }}]/{{ carousel_item_bg_opacity }} to-[{{ carousel_item_bg_secondary_colour }}]/{{ carousel_item_bg_opacity }} ',
-                                    (carousel_item_bg_gradient == false) => 'bg-[{{ carousel_item_bg_colour }}] bg-opacity-{{ carousel_item_bg_opacity }}'
-                                ) }}
-                            ">
-                                {{ carousel_item_title }}
-                                    <{{ heading }} class="mb-4 text-[{{ text_colour }}]">
-                                        {{ title }}
-                                    </{{ heading }}>
-                                {{ /carousel_item_title }}
-                                <div class="prose text-[{{ carousel_item_text_colour }}]">
-                                    {{ carousel_item_content | markdown }}
-                                </div>
-                            </div>
-                        {{ /carousel }}
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <!-- Navigation -->
-                    <div class="swiper-button-prev">
-                        <i class="fa-thin fa-chevron-left"></i>
-                    </div>
-                    <div class="swiper-button-next">
-                        <i class="fa-thin fa-chevron-right"></i>
-                    </div>
-                </div>
-            </div>
+{{ partial:page_builder/block class="carousel" }}
+<div class="mb-10 text-center md:text-start">
+    {{ carousel_title }} {{ partial:components/header }} {{ /carousel_title }}
+</div>
+<div
+    class="swiper"
+    data-cols-sm="{{ block:carousel_cols_sm }}"
+    data-cols-md="{{ block:carousel_cols_md }}"
+    data-cols-lg="{{ block:carousel_cols_lg }}"
+>
+    <div class="swiper-wrapper">
+        {{ carousel }}
+        <div
+            class="swiper-slide
+                {{ switch(
+                    (carousel_item_bg_gradient == true) => 'bg-gradient-to-r from-[{{ carousel_item_bg_colour }}]/{{ carousel_item_bg_opacity }} to-[{{ carousel_item_bg_secondary_colour }}]/{{ carousel_item_bg_opacity }} ',
+                    (carousel_item_bg_gradient == false) => 'bg-[{{ carousel_item_bg_colour }}] bg-opacity-{{ carousel_item_bg_opacity }}'
+                ) }}
+            "
+        >
+            {{ carousel_item_title }} {{ partial:components/header }} {{
+            /carousel_item_title }} {{ partial:components/markdown }}
         </div>
-    </section>
+        {{ /carousel }}
+    </div>
+    <div class="swiper-pagination"></div>
+
+    <!-- Navigation -->
+    <div class="swiper-button-prev">
+        <i class="fa-thin fa-chevron-left"></i>
+    </div>
+    <div class="swiper-button-next">
+        <i class="fa-thin fa-chevron-right"></i>
+    </div>
+</div>
 {{ /partial:page_builder/block }}
-<!-- End: /page_builder/_cards.antlers.html -->

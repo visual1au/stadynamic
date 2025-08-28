@@ -1,14 +1,30 @@
 title: 'Markdown Content'
 fields:
   -
-    handle: content
-    field:
-      type: markdown
-      display: Content
-      width: 75
-  -
     handle: text_colour
     field: colour_picker.colour
     config:
       display: 'Text Colour'
-      width: 25
+      width: 50
+  -
+    handle: text_alignment
+    field:
+      options:
+        -
+          key: left
+          value: Left
+        -
+          key: center
+          value: Center
+        -
+          key: right
+          value: Right
+      default: left
+      type: button_group
+      display: 'Text Alignment'
+      width: 50
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Content

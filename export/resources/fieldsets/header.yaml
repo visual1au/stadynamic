@@ -14,11 +14,6 @@ fields:
               hide: true
               fields:
                 -
-                  handle: title
-                  field:
-                    type: text
-                    display: Text
-                -
                   handle: heading
                   field:
                     options:
@@ -43,10 +38,53 @@ fields:
                     default: h2
                     type: select
                     display: Heading
-                    width: 75
+                    width: 33
+                -
+                  handle: text_alignment
+                  field:
+                    options:
+                      -
+                        key: left
+                        value: Left
+                      -
+                        key: center
+                        value: Center
+                      -
+                        key: right
+                        value: Right
+                    default: left
+                    type: button_group
+                    display: 'Text Alignment'
+                    width: 33
                 -
                   handle: text_colour
                   field: colour_picker.colour
                   config:
                     display: 'Text Colour'
-                    width: 25
+                    width: 33
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Text
+                    width: 66
+                -
+                  handle: font_weight
+                  field:
+                    options:
+                      -
+                        key: normal
+                        value: Normal
+                      -
+                        key: medium
+                        value: Medium
+                      -
+                        key: semibold
+                        value: Semibold
+                      -
+                        key: bold
+                        value: Bold
+                    default: bold
+                    type: select
+                    display: 'Font Weight'
+                    width: 33

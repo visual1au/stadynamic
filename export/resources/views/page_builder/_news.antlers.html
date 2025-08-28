@@ -1,64 +1,67 @@
-{{# @name Panels @desc The panels page builder block. @set page.page_builder.panels #}}
-<!-- /page_builder/_panels.antlers.html -->
 {{ partial:page_builder/block }}
-    <section id="{{ block:slug }}" class="
-        {{ switch(
-            (news_bg_gradient == true) => 'bg-gradient-to-r from-[{{ news_bg_colour }}]/{{ news_bg_opacity }} to-[{{ news_bg_secondary_colour }}]/{{ news_bg_opacity }} ',
-            (news_bg_gradient == false) => 'bg-[{{ news_bg_colour }}] bg-opacity-{{ news_bg_opacity }}'
-            ) }}
-    ">
-    <div class="content-area">
-        <div class="inner-padding">
-            <div class="mb-10 text-center md:text-start">
-                {{ news_title }}
-                    <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
-                        {{ title }}
-                    </{{ heading }}>
-                {{ /news_title }}
-            </div>
+<div class="mb-10 text-center md:text-start">
+    {{ news_title }} {{ partial:components/header }} {{ /news_title }}
+</div>
 
-                {{ if limit > 0 }}
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-                        {{ collection:news limit="{{ limit }}" }}
-                            {{ partial:news/card }}
-                        {{ /collection:news }}
-                    </div>
-                    <div class="flex justify-center mt-10">
-                        <a href="/news" class="btn btn-primary">View All</a>
-                    </div>
-                {{ else }}
-                    {{ collection:news paginate="{{ paginate }}" as="news" }}
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-                            {{ news }}
-                                {{ partial:news/card }}
-                            {{ /news }}
-                        </div>
+{{ if limit > 0 }}
+<div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+    {{ collection:news limit="{{ limit }}" }} {{ partial:news/card }} {{
+    /collection:news }}
+</div>
+<div class="mt-10 flex justify-center">
+    <a href="/news" class="btn btn-primary">View All</a>
+</div>
+{{ else }} {{ collection:news paginate="{{ paginate }}" as="news" }}
+<div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+    {{ news }} {{ partial:news/card }} {{ /news }}
+</div>
 
-                        <!-- Pagination -->
-                        {{ paginate }}
-                            {{ if total_pages > 1 }}
-                                <div class="flex items-center justify-center gap-x-10 mt-10">
-                                    <a href="{{ prev_page }}" class="flex items-center rounded-radius p-1 text-on-surface hover:text-primary dark:text-on-surface-dark dark:hover:text-primary-dark" aria-label="previous page">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-6">
-                                            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                                        </svg>
-                                        Previous
-                                    </a>
+<!-- Pagination -->
+{{ paginate }} {{ if total_pages > 1 }}
+<div class="mt-10 flex items-center justify-center gap-x-10">
+    <a
+        href="{{ prev_page }}"
+        class="rounded-radius text-on-surface dark:text-on-surface-dark dark:hover:text-primary-dark flex items-center p-1 hover:text-primary"
+        aria-label="previous page"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+            class="size-6"
+        >
+            <path
+                fill-rule="evenodd"
+                d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+                clip-rule="evenodd"
+            />
+        </svg>
+        Previous
+    </a>
 
-                                    {{ current_page }} of {{ total_pages }} pages
+    {{ current_page }} of {{ total_pages }} pages
 
-                                    <a href="{{ next_page }}" class="flex items-center rounded-radius p-1 text-on-surface hover:text-primary dark:text-on-surface-dark dark:hover:text-primary-dark" aria-label="next page">
-                                        Next
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-6">
-                                            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            {{ /if }}
-                        {{ /paginate }}
-                    {{ /collection:news }}
-                {{ /if }}
-            </div>
-        </div>
-    </section>
-{{ /partial:page_builder/block }}
+    <a
+        href="{{ next_page }}"
+        class="rounded-radius text-on-surface dark:text-on-surface-dark dark:hover:text-primary-dark flex items-center p-1 hover:text-primary"
+        aria-label="next page"
+    >
+        Next
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+            class="size-6"
+        >
+            <path
+                fill-rule="evenodd"
+                d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd"
+            />
+        </svg>
+    </a>
+</div>
+{{ /if }} {{ /paginate }} {{ /collection:news }} {{ /if }} {{
+/partial:page_builder/block }}

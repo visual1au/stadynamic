@@ -1,0 +1,16 @@
+<div
+    class="prose text-[{{ text_colour }}] text-{{ text_alignment }} max-w-none {{ class }}"
+>
+    <style>
+        .prose strong,
+        .prose blockquote,
+        .prose ul,
+        .prose ol,
+        .prose ul li::marker,
+        .prose ol li::marker {
+            color: inherit !important;
+        }
+    </style>
+
+    {{ content | markdown }}
+</div>

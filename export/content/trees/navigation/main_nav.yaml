@@ -3,15 +3,14 @@ tree:
     id: b8d921bb-3b5f-454d-8801-56dd969f091b
     title: Gallery
     url: '/#gallery'
-    children:
-      -
-        id: 369c209f-e83c-4087-bfb8-de52f37d6596
-        title: Carousel
-        url: '/#carousel'
-      -
-        id: 758649da-c19c-4a4a-b4e9-6cea17ddc389
-        title: Banner
-        url: '/#banner'
+  -
+    id: 369c209f-e83c-4087-bfb8-de52f37d6596
+    title: Carousel
+    url: '/#carousel'
+  -
+    id: 758649da-c19c-4a4a-b4e9-6cea17ddc389
+    title: Banner
+    url: '/#banner'
   -
     id: 1670f855-d540-48aa-b485-284c938938e9
     title: FAQ

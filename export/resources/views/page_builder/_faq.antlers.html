@@ -1,76 +1,93 @@
 {{ partial:page_builder/block }}
-    <section id="{{ block:slug }}" class="
+<div
+    class="faq-section
         {{ switch(
-    (faq_bg_gradient == true) => 'bg-gradient-to-r from-[{{ faq_bg_colour }}]/{{ faq_bg_opacity }} to-[{{ faq_bg_secondary_colour }}]/{{ faq_bg_opacity }} ',
-    (faq_bg_gradient == false) => 'bg-[{{ faq_bg_colour }}] bg-opacity-{{ faq_bg_opacity }}'
-    ) }}
-    ">
-        <div class="content-area">
-            <div class="inner-padding faq-section
-                {{ switch(
-    (layout == 'row') => 'flex-col text-center md:text-start md:flex-row',
-    (layout == 'col') => 'flex-col text-center') }}
+(layout == 'row') => 'flex-col text-center md:text-start md:flex-row',
+(layout == 'col') => 'flex-col text-center') }}
+    {{ switch(
+(layout == 'col' && width == 25) => 'max-w-lg',
+(layout == 'col' && width == 33) => 'max-w-xl',
+(layout == 'col' && width == 50) => 'max-w-2xl',
+(layout == 'col' && width == 66) => 'max-w-4xl',
+(layout == 'col' && width == 75) => 'max-w-6xl',
+(layout == 'col' && width == 100) => 'max-w-full',
+) }}"
+>
+    <header
+        class="
             {{ switch(
-    (layout == 'col' && width == 25) => 'max-w-lg',
-    (layout == 'col' && width == 33) => 'max-w-xl',
-    (layout == 'col' && width == 50) => 'max-w-2xl',
-    (layout == 'col' && width == 66) => 'max-w-4xl',
-    (layout == 'col' && width == 75) => 'max-w-6xl',
-    (layout == 'col' && width == 100) => 'max-w-full',
-    ) }}">
-                <header class="
-                    {{ switch(
-    (layout == 'row' && width == 25) => 'md:w-[25%]',
-    (layout == 'row' && width == 33) => 'md:w-[33%]',
-    (layout == 'row' && width == 50) => 'md:w-[50%]',
-    (layout == 'row' && width == 66) => 'md:w-[66%]',
-    (layout == 'row' && width == 75) => 'md:w-[75%]',
-    (layout == 'row' && width == 100) => 'md:w-[100%]',
-    ) }}">
-                    {{ faq_title }}
-                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
-                            {{ title }}
-                        </{{ heading }}>
-                    {{ /faq_title }}
-
-                    <div class="text-[{{ faq_text_colour }}]">
-                        {{ faq_content | markdown }}
-                    </div>
-                    {{ if image }}
-                        <img src="{{ image }}" alt="faq-image">
-                    {{ /if }}
-                    <div class="buttons">
-                        {{ faq_buttons }}
-                            {{ partial:components/button }}
-                        {{ /faq_buttons }}
-                    </div>
-                </header>
-                <div x-data="{ selectedAccordionItem: null }" class="faq-container
-                    {{ switch(
-    (layout == 'row' && width == 25) => 'md:w-[75%]',
-    (layout == 'row' && width == 33) => 'md:w-[66%]',
-    (layout == 'row' && width == 50) => 'md:w-[50%]',
-    (layout == 'row' && width == 66) => 'md:w-[33%]',
-    (layout == 'row' && width == 75) => 'md:w-[25%]',
-    (layout == 'row' && width == 100) => 'md:w-[0%]',
-    ) }}">
-                    {{ faq_items }}
-                        <div class="faq-item">
-                            <button id=" controlsAccordionItem{{ id }}" type="button" aria-controls="accordionItem{{ id }}" @click="selectedAccordionItem = (selectedAccordionItem === '{{ id }}' ? null : '{{ id }}')" :class="selectedAccordionItem === '{{ id }}' ? 'text-primary font-bold' : 'text-neutral-600 font-medium'" class="question" :aria-expanded="selectedAccordionItem === '{{ id }}' ? 'true' : 'false'">
-                                {{ question }}
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" :class="selectedAccordionItem === '{{ id }}'  ?  'rotate-180'  :  ''">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </button>
-                            <div x-cloak x-show="selectedAccordionItem === '{{ id }}'" id="accordionItem{{ id }}" role="region" aria-labelledby="controlsAccordionItem{{ id }}" x-collapse>
-                                <div class="answer">
-                                    <span class="prose">{{ answer | markdown }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    {{ /faq_items }}
+(layout == 'row' && width == 25) => 'md:w-[25%]',
+(layout == 'row' && width == 33) => 'md:w-[33%]',
+(layout == 'row' && width == 50) => 'md:w-[50%]',
+(layout == 'row' && width == 66) => 'md:w-[66%]',
+(layout == 'row' && width == 75) => 'md:w-[75%]',
+(layout == 'row' && width == 100) => 'md:w-[100%]',
+) }}"
+    >
+        {{ faq_title }} {{ partial:components/header }} {{ /faq_title }} {{
+        partial:components/markdown }} {{ if image }}
+        <img src="{{ image }}" alt="faq-image" />
+        {{ /if }} {{ if faq_buttons }}
+        <div class="buttons">
+            {{ faq_buttons }} {{ partial:components/button }} {{ /faq_buttons }}
+        </div>
+        {{ /if }}
+    </header>
+    <div
+        x-data="{ selectedAccordionItem: null }"
+        class="faq-container
+            {{ switch(
+(layout == 'row' && width == 25) => 'md:w-[75%]',
+(layout == 'row' && width == 33) => 'md:w-[66%]',
+(layout == 'row' && width == 50) => 'md:w-[50%]',
+(layout == 'row' && width == 66) => 'md:w-[33%]',
+(layout == 'row' && width == 75) => 'md:w-[25%]',
+(layout == 'row' && width == 100) => 'md:w-[0%]',
+) }}"
+    >
+        {{ faq_items }}
+        <div class="faq-item">
+            <button
+                id=" controlsAccordionItem{{ id }}"
+                type="button"
+                aria-controls="accordionItem{{ id }}"
+                @click="selectedAccordionItem = (selectedAccordionItem === '{{ id }}' ? null : '{{ id }}')"
+                :class="selectedAccordionItem === '{{ id }}' ? 'text-primary font-bold' : 'text-neutral-600 font-medium'"
+                class="question"
+                :aria-expanded="selectedAccordionItem === '{{ id }}' ? 'true' : 'false'"
+            >
+                {{ question }}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="size-5 shrink-0 transition"
+                    aria-hidden="true"
+                    :class="selectedAccordionItem === '{{ id }}'  ?  'rotate-180'  :  ''"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                </svg>
+            </button>
+            <div
+                x-cloak
+                x-show="selectedAccordionItem === '{{ id }}'"
+                id="accordionItem{{ id }}"
+                role="region"
+                aria-labelledby="controlsAccordionItem{{ id }}"
+                x-collapse
+            >
+                <div class="answer">
+                    <span class="prose">{{ answer | markdown }}</span>
                 </div>
             </div>
         </div>
-    </section>
+        {{ /faq_items }}
+    </div>
+</div>
 {{ /partial:page_builder/block }}

@@ -1,9 +1,11 @@
-<div class="bg-white space-y-4 text-center p-4 rounded-2xl flex flex-col">
+<div class="flex flex-col space-y-4 rounded-2xl bg-white p-4 text-center">
     <h4>{{ title }}</h4>
-    <img class="object-cover transition w-full h-56 md:h-72" src="{{ featured_image }}" alt="{{ title }}">
-    <div class="prose line-clamp-3">
-        {{ content }}
-    </div>
+    <img
+        class="h-56 w-full object-cover transition md:h-72"
+        src="{{ featured_image }}"
+        alt="{{ title }}"
+    />
+    {{ partial:components/markdown class="line-clamp-3"}}
     <div>
         <a href="{{ url }}" class="hover:text-primary">
             <strong>READ MORE</strong>

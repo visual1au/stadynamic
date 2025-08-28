@@ -2,7 +2,7 @@ title: Form
 fields:
   -
     import: colour_picker
-    prefix: form_bg_
+    prefix: bg_
   -
     handle: slug
     field:
@@ -36,7 +36,6 @@ fields:
     prefix: form_
   -
     import: markdown_content
-    prefix: form_
   -
     handle: image
     field:

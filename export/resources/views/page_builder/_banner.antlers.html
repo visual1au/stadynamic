@@ -1,44 +1,29 @@
 {{ partial:page_builder/block }}
-    <section id="{{ block:slug }}" class="
-        {{ switch(
-        (banner_bg_gradient == true) => 'bg-gradient-to-r from-[{{ banner_bg_colour }}]/{{ banner_bg_opacity }} to-[{{ banner_bg_secondary_colour }}]/{{ banner_bg_opacity }} ',
-        (banner_bg_gradient == false) => 'bg-[{{ banner_bg_colour }}] bg-opacity-{{ banner_bg_opacity }}'
-        ) }}
-    ">
-        <div class="content-area">
-            <div class="inner-padding">
-                <div class="banner-container
-                    {{ switch(
-                    (banner_gradient == true) => 'bg-gradient-to-r from-[{{ banner_colour }}]/{{ banner_opacity }} to-[{{ banner_secondary_colour }}]/{{ banner_opacity }} ',
-                    (banner_gradient == false) => 'bg-[{{ banner_colour }}] bg-opacity-{{ banner_opacity }}'
-                    ) }}
-                ">
-                    <div class="content-area">
-                        <!-- Content -->
-                        <div class="content">
-                            {{ banner_title }}
-                                <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
-                                    {{ title }}
-                                </{{ heading }}>
-                            {{ /banner_title }}
-                            <div class="prose text-[{{ banner_text_colour }}]">
-                                {{ banner_content | markdown }}
-                            </div>
-                        </div>
+<div
+    class="banner-container
+    {{ switch(
+    (banner_gradient == true) => 'bg-gradient-to-r from-[{{ banner_colour }}]/{{ banner_opacity }} to-[{{ banner_secondary_colour }}]/{{ banner_opacity }} ',
+    (banner_gradient == false) => 'bg-[{{ banner_colour }}] bg-opacity-{{ banner_opacity }}'
+    ) }}
+"
+>
+    <div class="content-area">
+        <!-- Content -->
+        <div class="content">
+            {{ banner_title }} {{ partial:components/header }} {{ /banner_title
+            }} {{ partial:components/markdown }}
+        </div>
 
-                        <!-- Image -->
-                        <div class="image-container">
-                            <img src="{{ background_image }}" alt="{{ title }}">
-                        </div>
-                    </div>
+        <!-- Image -->
+        <div class="image-container">
+            <img src="{{ banner_image }}" alt="{{ title }}" />
+        </div>
+    </div>
 
-                    <!-- Buttons -->
-                    <div class="buttons">
-                        {{ banner_buttons }}
-                            {{ partial:components/button }}
-                        {{ /banner_buttons }}
-                    </div>
-                </div>
-            </div>
-    </section>
+    <!-- Buttons -->
+    <div class="buttons">
+        {{ banner_buttons }} {{ partial:components/button }} {{ /banner_buttons
+        }}
+    </div>
+</div>
 {{ /partial:page_builder/block }}

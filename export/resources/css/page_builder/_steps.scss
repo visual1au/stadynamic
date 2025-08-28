@@ -5,8 +5,6 @@
         }
 
         .steps-grid {
-            @apply pb-24;
-
             .step-wrapper {
                 @apply relative;
                 @apply flex flex-col sm:block;

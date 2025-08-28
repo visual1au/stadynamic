@@ -1,25 +1,10 @@
-{{# @name Hero @desc The hero page builder block. @set page.page_builder.hero #}}
-<!-- /page_builder/_hero.antlers.html -->
-{{ partial:page_builder/block }}
-    <section style="background-image: url('{{ background_image }}');" class="hero">
-        <div class="content-area">
-            <div class="inner-padding">
-                <header>
-                    {{ hero_title }}
-                        <{{ heading }} class=" flex-1 mb-4 text-[{{ text_colour }}]">
-                            {{ title }}
-                        </{{ heading }}>
-                    {{ /hero_title }}
-                </header>
+{{ partial:page_builder/block class="hero"}}
+<header>
+    {{ hero_title }} {{ partial:components/header }} {{ /hero_title }}
+</header>
 
-                <!-- Buttons -->
-                 <div class="buttons">
-                    {{ hero_buttons }}
-                        {{ partial:components/button }}
-                    {{ /hero_buttons }}
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Buttons -->
+<div class="buttons">
+    {{ hero_buttons }} {{ partial:components/button }} {{ /hero_buttons }}
+</div>
 {{ /partial:page_builder/block }}
-<!-- End: /page_builder/_hero.antlers.html -->

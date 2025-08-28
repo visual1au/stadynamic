@@ -2,16 +2,13 @@ title: Steps
 fields:
   -
     import: colour_picker
-    prefix: steps_bg_
+    prefix: bg_
   -
     handle: slug
     field:
       type: slug
       display: Slug
       instructions: 'The slug is required for anchored links.'
-  -
-    import: background_image
-    prefix: step_bg_
   -
     import: header
     prefix: steps_

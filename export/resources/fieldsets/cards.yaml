@@ -2,7 +2,7 @@ title: Cards
 fields:
   -
     import: colour_picker
-    prefix: cards_bg_
+    prefix: bg_
   -
     handle: slug
     field:

@@ -56,7 +56,13 @@
                 </div>
             </div>
             {{ else }}
-            <li><a href="{{ url }}">{{ title }}</a></li>
+            <li>
+                <a
+                    href="{{ url }}"
+                    class="{{ if is_current }} text-primary {{ /if }}"
+                    >{{ title }}</a
+                >
+            </li>
             {{ /if }} {{ /nav:main_nav }}
         </ul>
 
@@ -131,7 +137,13 @@
                 {{ /children }}
             </ul>
             {{ else }}
-            <li class="py-4"><a href="{{ url }}">{{ title }}</a></li>
+            <li class="py-4">
+                <a
+                    href="{{ url }}"
+                    class="{{ if is_current }} text-primary {{ /if }}"
+                    >{{ title }}</a
+                >
+            </li>
             {{ /if }} {{ /nav:main_nav }}
             <a
                 href="/#contact"

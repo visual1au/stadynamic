@@ -2,7 +2,7 @@ title: Gallery
 fields:
   -
     import: colour_picker
-    prefix: gallery_bg_
+    prefix: bg_
   -
     handle: slug
     field:
