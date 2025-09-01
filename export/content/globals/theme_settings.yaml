@@ -6,7 +6,7 @@ data:
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     mode: htmlmixed
-  primary: '#325ced'
+  primary: '#1100ff'
   secondary: '#bccaef'
   tertiary: '#eff4fe'
   quaternary: '#f9f9f9'

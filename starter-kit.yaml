@@ -24,7 +24,6 @@ export_paths:
   - public/assets
   - package.json
   - README.md
-  - scripts
   - tailwind.config.js
   - tailwind.config.stataroid.js
   - vite.config.js
